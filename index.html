@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>punchDev Marketing | AI-Powered Lead Generation for B2B SaaS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --punch-red: #C41E3A;
@@ -55,7 +58,10 @@
         }
 
         /* Typography */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             line-height: 1.1;
@@ -140,7 +146,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(ellipse 80% 50% at 50% -20%, var(--punch-red-glow) 0%, transparent 60%),
                 radial-gradient(ellipse 60% 40% at 100% 0%, rgba(196, 30, 58, 0.15) 0%, transparent 50%);
             pointer-events: none;
@@ -152,7 +158,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 linear-gradient(var(--gray-800) 1px, transparent 1px),
                 linear-gradient(90deg, var(--gray-800) 1px, transparent 1px);
             background-size: 80px 80px;
@@ -193,8 +199,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
         }
 
         .hero h1 {
@@ -270,6 +285,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -544,6 +560,14 @@
             font-size: 0.9rem;
         }
 
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 2px solid var(--gray-800);
+        }
+
         .about-image::after {
             content: '';
             position: absolute;
@@ -607,8 +631,13 @@
         }
 
         @keyframes rotateGlow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .cta-content {
@@ -710,7 +739,11 @@
                 padding: 6rem 1.5rem 4rem;
             }
 
-            .problem, .solution, .social-proof, .about, .cta {
+            .problem,
+            .solution,
+            .social-proof,
+            .about,
+            .cta {
                 padding: 5rem 1.5rem;
             }
 
@@ -748,6 +781,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -755,12 +789,12 @@
         <a href="#" class="logo">
             <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
                 <!-- Simplified fist/chart logo -->
-                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A"/>
-                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A"/>
-                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B"/>
-                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B"/>
-                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B"/>
-                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B"/>
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
             </svg>
             <span class="logo-text">punch<span>Dev</span></span>
         </a>
@@ -774,11 +808,13 @@
         <div class="hero-content">
             <div class="hero-badge">AI-Powered Lead Generation</div>
             <h1>We Help B2B SaaS Companies Book <span class="highlight">15+ Qualified Meetings</span> Per Month</h1>
-            <p class="hero-subtitle">Using AI-powered outreach that works while you sleep. Scale your pipeline without scaling your headcount.</p>
+            <p class="hero-subtitle">Using AI-powered outreach that works while you sleep. Scale your pipeline without
+                scaling your headcount.</p>
             <a href="https://calendly.com/gduplessy-punchdev/discovery-call" target="_blank" class="hero-cta">
                 Book a Free Strategy Call
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
             </a>
         </div>
@@ -818,55 +854,64 @@
         <div class="solution-header">
             <div class="section-label">The Solution</div>
             <h2>punchDev Builds AI-Powered Lead Generation Systems</h2>
-            <p>We combine AI automation with proven outreach strategies to book qualified meetings while you focus on closing deals.</p>
+            <p>We combine AI automation with proven outreach strategies to book qualified meetings while you focus on
+                closing deals.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
                 </div>
                 <h3>Targeted Lead Generation</h3>
-                <p>AI identifies and enriches your ideal prospects automatically, so your pipeline is always full of qualified opportunities.</p>
+                <p>AI identifies and enriches your ideal prospects automatically, so your pipeline is always full of
+                    qualified opportunities.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
                     </svg>
                 </div>
                 <h3>Personalized Outreach</h3>
-                <p>Every email is uniquely crafted by AI based on prospect data, company research, and proven high-converting templates.</p>
+                <p>Every email is uniquely crafted by AI based on prospect data, company research, and proven
+                    high-converting templates.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                     </svg>
                 </div>
                 <h3>24/7 Reply Handling</h3>
-                <p>AI classifies and responds to replies instantly—qualifying leads, answering questions, and booking meetings around the clock.</p>
+                <p>AI classifies and responds to replies instantly—qualifying leads, answering questions, and booking
+                    meetings around the clock.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="3" y1="9" x2="21" y2="9"/>
-                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <line x1="3" y1="9" x2="21" y2="9" />
+                        <line x1="9" y1="21" x2="9" y2="9" />
                     </svg>
                 </div>
                 <h3>CRM Integration</h3>
-                <p>Seamlessly syncs with HubSpot, Salesforce, and other CRMs. Leads flow directly into your pipeline with full context.</p>
+                <p>Seamlessly syncs with HubSpot, Salesforce, and other CRMs. Leads flow directly into your pipeline
+                    with full context.</p>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof Section -->
+    <!-- Social Proof Section
     <section class="social-proof">
         <div class="social-proof-content">
             <div class="section-label">Results</div>
@@ -876,31 +921,36 @@
                 <span>Be among our first success stories — book a call to learn how we can help your team</span>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- About Section -->
     <section class="about">
         <div class="about-grid">
             <div class="about-image">
-                <div class="about-image-placeholder">Your Photo Here</div>
+                <img src="gdpic.png" alt="Georges Duplessy" class="about-photo">
             </div>
             <div class="about-content">
                 <div class="section-label">About</div>
                 <h2>Hi, I'm Georges</h2>
-                <p>I've spent years in the B2B SaaS trenches—building sales processes, scaling pipelines, and watching talented reps waste hours on manual prospecting.</p>
-                <p>That's why I built punchDev Marketing. We combine the latest AI automation with battle-tested outreach strategies to help SaaS companies book more qualified meetings without the overhead of a large SDR team.</p>
+                <p>I've spent years in the B2B SaaS trenches—building sales processes, scaling pipelines, and watching
+                    talented reps waste hours on manual prospecting.</p>
+                <p>That's why I built punchDev Marketing. We combine the latest AI automation with battle-tested
+                    outreach strategies to help SaaS companies book more qualified meetings without the overhead of a
+                    large SDR team.</p>
                 <div class="credentials">
                     <div class="credential">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
                         B2B SaaS Expert
                     </div>
                     <div class="credential">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
                         AI Automation Specialist
                     </div>
@@ -914,11 +964,13 @@
         <div class="cta-content">
             <div class="section-label">Get Started</div>
             <h2>Ready to Scale Your Pipeline?</h2>
-            <p>Book a free 15-minute discovery call. We'll analyze your current process and show you exactly how AI can accelerate your pipeline.</p>
+            <p>Book a free 15-minute discovery call. We'll analyze your current process and show you exactly how AI can
+                accelerate your pipeline.</p>
             <a href="https://calendly.com/gduplessy-punchdev/discovery-call" target="_blank" class="cta-button">
                 Book Your Strategy Call
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
             </a>
         </div>
@@ -928,17 +980,17 @@
     <footer>
         <div class="footer-logo">
             <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A"/>
-                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A"/>
-                <rect x="20" y="28" width="8" height="4" fill="#52525B"/>
-                <rect x="18" y="18" width="3" height="10" fill="#52525B"/>
-                <rect x="22.5" y="14" width="3" height="14" fill="#52525B"/>
-                <rect x="27" y="16" width="3" height="12" fill="#52525B"/>
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
+                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
+                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
             </svg>
             <span>punchDev Marketing</span>
         </div>
         <div class="footer-contact">
-            <a href="mailto:georges@punchdev.co">georges@punchdev.co</a>
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
         </div>
     </footer>
 
@@ -988,4 +1040,5 @@
     </script>
 
 </body>
+
 </html>

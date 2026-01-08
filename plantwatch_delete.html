@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PlantWatch – Account & Data Deletion Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; line-height: 1.5; }
+    h1, h2 { margin-top: 1.5rem; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button { margin-top: 1.5rem; padding: 0.6rem 1.2rem; cursor: pointer; }
+    .note { font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>PlantWatch account & data deletion</h1>
+
+  <p>
+    This page is for users of the <strong>PlantWatch</strong> app who want to request deletion of their app account and associated data. [web:16][web:19][web:22]
+  </p>
+
+  <h2>How to request deletion</h2>
+  <ol>
+    <li>Fill out the form below using the same email address you use in the PlantWatch app.</li>
+    <li>Tell us whether you want your <strong>account and all associated data</strong> deleted or only specific data types. [web:16][web:19][web:25]</li>
+    <li>Submit the form. You will receive a confirmation email or in‑app notification when your request has been processed.</li>
+  </ol>
+
+  <h2>What data is deleted or kept</h2>
+  <p>
+    When you request deletion of your PlantWatch account, the following data will normally be deleted:
+  </p>
+  <ul>
+    <li>Account identifiers (such as your PlantWatch account ID and login email stored in the app backend).</li>
+    <li>Profile data (display name, avatar or profile photo if stored by PlantWatch).</li>
+    <li>Plant tracking content (plant entries, notes, reminders, schedules, logs, and other activity saved in your account).</li>
+    <li>In‑app preferences (app settings associated with your account).</li>
+  </ul>
+
+  <p>
+    The following data may be <strong>retained for a limited period</strong> where required for security, fraud prevention, or legal compliance (for example, tax or accounting rules): [web:17][web:20][web:22]
+  </p>
+  <ul>
+    <li>Basic transaction and billing records (if you made purchases or subscriptions through PlantWatch).</li>
+    <li>Security, audit, and abuse‑prevention logs.</li>
+  </ul>
+
+  <p class="note">
+    Unless a longer retention period is legally required, we aim to delete or irreversibly anonymize personal data within 30 days of confirming your request. [web:16][web:17][web:22]
+  </p>
+
+  <h2>Submit a deletion request</h2>
+
+  <!-- Replace YOUR_FORM_ID with your real Formspree form ID -->
+  <form
+    action="https://formspree.io/f/xnjnegkw"
+    method="POST"
+  >
+    <label for="email">Email address used with PlantWatch</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+    >
+
+    <label for="request-type">What would you like to delete?</label>
+    <select id="request-type" name="request_type" required>
+      <option value="">Please choose…</option>
+      <option value="account_and_all_data">
+        Delete my PlantWatch account and all associated data
+      </option>
+      <option value="specific_data_types">
+        Delete specific data types only (describe below)
+      </option>
+    </select>
+
+    <label for="data-types">
+      If requesting deletion of specific data types, describe them here
+    </label>
+    <textarea
+      id="data-types"
+      name="data_types_details"
+      rows="4"
+      placeholder="Example: delete my plant photos but keep my account active."
+    ></textarea>
+
+    <label for="region">
+      Country or region (for data protection laws)
+    </label>
+    <input
+      type="text"
+      id="region"
+      name="region"
+      placeholder="e.g., United States, EU, UK, etc."
+    >
+
+    <label for="additional-info">
+      Additional information (optional)
+    </label>
+    <textarea
+      id="additional-info"
+      name="additional_info"
+      rows="4"
+      placeholder="Any other details that can help us locate your account or process your request."
+    ></textarea>
+
+    <!-- Optional hidden field to help you filter in Formspree -->
+    <input type="hidden" name="request_source" value="Google Play Store deletion link">
+
+    <button type="submit">Submit deletion request</button>
+  </form>
+
+  <p class="note">
+    If you have trouble using this form, you can also contact support using the email address listed on the PlantWatch Google Play store listing. [web:16][web:19][web:22]
+  </p>
+</body>
+</html>

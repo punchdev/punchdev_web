@@ -74,7 +74,19 @@ async function generatePDFReport(calculatorData) {
     doc.setFont(undefined, 'bold');
     doc.text(`• Monthly meeting goal: ${calculatorData.meetingsPerMonth}`, 25, summaryY + lineHeight);
     doc.text(`• Location: ${calculatorData.location}`, 25, summaryY + lineHeight * 2);
-    doc.text(`• SDRs required: ${calculatorData.sdrsNeeded}`, 25, summaryY + lineHeight * 3);
+
+    // SDR count with context
+    let sdrText = `• SDRs required: ${calculatorData.sdrsNeeded}`;
+    if (calculatorData.currentSDRs > 0) {
+        if (calculatorData.currentSDRs < calculatorData.sdrsNeeded) {
+            sdrText += ` (you have ${calculatorData.currentSDRs}, need ${calculatorData.sdrsNeeded - calculatorData.currentSDRs} more)`;
+        } else if (calculatorData.currentSDRs === calculatorData.sdrsNeeded) {
+            sdrText += ` (you have the right team size)`;
+        } else {
+            sdrText += ` (you have ${calculatorData.currentSDRs}, ${calculatorData.currentSDRs - calculatorData.sdrsNeeded} extra)`;
+        }
+    }
+    doc.text(sdrText, 25, summaryY + lineHeight * 3);
 
     doc.setFont(undefined, 'normal');
     doc.text('Cost Comparison:', 20, summaryY + lineHeight * 5);
@@ -421,7 +433,25 @@ async function generatePDFReport(calculatorData) {
 function getRecommendations(data) {
     const recommendations = [];
 
-    if (data.sdrsNeeded >= 3) {
+    // Recommendation based on current SDR count
+    if (data.currentSDRs === 0) {
+        recommendations.push({
+            title: 'Build Without Hiring Risk',
+            text: `Starting from zero SDRs gives you a unique advantage: you can build your outbound motion with AI from day one, avoiding the 3-6 month hiring and ramp cycle entirely. No recruitment costs, no training period, no turnover risk.`
+        });
+    } else if (data.currentSDRs > 0 && data.currentSDRs < data.sdrsNeeded) {
+        recommendations.push({
+            title: 'Fill the Gap with AI',
+            text: `You have ${data.currentSDRs} SDR${data.currentSDRs > 1 ? 's' : ''} but need ${data.sdrsNeeded} to hit your meeting goal. Instead of hiring ${data.sdrsNeeded - data.currentSDRs} more, use AI to fill the gap while your current team focuses on high-value activities.`
+        });
+    } else if (data.currentSDRs > data.sdrsNeeded) {
+        recommendations.push({
+            title: 'Optimize Your Team',
+            text: `You have ${data.currentSDRs} SDRs but only need ${data.sdrsNeeded} for your meeting goal. Consider using AI to maintain current output while redeploying ${data.currentSDRs - data.sdrsNeeded} rep${data.currentSDRs - data.sdrsNeeded > 1 ? 's' : ''} to closing or account management.`
+        });
+    }
+
+    if (data.sdrsNeeded >= 3 && data.currentSDRs > 0) {
         recommendations.push({
             title: 'Consider Hybrid Approach',
             text: `With ${data.sdrsNeeded} SDRs needed, consider a hybrid approach: Keep your best 1-2 SDRs for complex accounts while using AI for high-volume prospecting. This balances personalization with efficiency.`

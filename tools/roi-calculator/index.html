@@ -1703,6 +1703,7 @@
         function calculate() {
             const meetingsPerMonth = parseInt(inputs.meetingGoal.value);
             const location = inputs.location.value;
+            const currentSDRs = parseInt(inputs.currentSDRs.value) || 0;
             const rampMonths = parseInt(inputs.rampTime.value);
             const turnoverRate = parseInt(inputs.turnoverRate.value) / 100;
 
@@ -1758,7 +1759,18 @@
             // Update outputs
             outputs.sdrCost.textContent = '$' + totalSDRCost.toLocaleString('en-US', {maximumFractionDigits: 0});
             outputs.aiCost.textContent = '$' + annualAICost.toLocaleString('en-US', {maximumFractionDigits: 0});
-            outputs.sdrCount.textContent = sdrsNeeded + (sdrsNeeded === 1 ? ' SDR required' : ' SDRs required');
+
+            // SDR count with contextual messaging
+            if (currentSDRs === 0) {
+                outputs.sdrCount.textContent = sdrsNeeded + (sdrsNeeded === 1 ? ' SDR required' : ' SDRs required');
+            } else if (currentSDRs < sdrsNeeded) {
+                outputs.sdrCount.textContent = `Need ${sdrsNeeded} SDRs (you have ${currentSDRs}, need ${sdrsNeeded - currentSDRs} more)`;
+            } else if (currentSDRs === sdrsNeeded) {
+                outputs.sdrCount.textContent = `${sdrsNeeded} SDRs required (you have the right team size)`;
+            } else {
+                outputs.sdrCount.textContent = `Need ${sdrsNeeded} SDRs (you have ${currentSDRs}, ${currentSDRs - sdrsNeeded} extra)`;
+            }
+
             outputs.savings.textContent = '$' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
             outputs.savingsPercent.textContent = savingsPercent + '% cost reduction';
             outputs.sdrCostPerMeeting.textContent = '$' + Math.round(sdrCostPerMeeting).toLocaleString('en-US');
@@ -1790,6 +1802,7 @@
             currentCalculatorData = {
                 meetingsPerMonth,
                 location,
+                currentSDRs,
                 rampMonths,
                 turnoverRate,
                 baseSalary,

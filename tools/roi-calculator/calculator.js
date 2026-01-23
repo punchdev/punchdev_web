@@ -143,7 +143,7 @@ async function generatePDFReport(calculatorData) {
         { label: 'Benefits (25%)', value: formatCurrency(calculatorData.baseSalary * 0.25) },
         { label: 'Tools & Software', value: '$2,400/year' },
         { label: 'Ramp Cost (lost productivity)', value: formatCurrency(calculatorData.rampCost) },
-        { label: 'Turnover Cost (replacement)', value: formatCurrency(calculatorData.turnoverCost) },
+        { label: 'Turnover Cost (replacement)', value: formatCurrency(calculatorData.annualTurnoverCost) },
         { label: 'Management Overhead', value: calculatorData.managementCost > 0 ? formatCurrency(calculatorData.managementCost) : 'N/A' }
     ];
 
@@ -390,7 +390,7 @@ async function generatePDFReport(calculatorData) {
         '1. Review this analysis with your leadership team',
         '2. Book a free strategy call with punchDev to discuss your specific needs',
         '3. Get a custom implementation plan tailored to your ICP and industry',
-        '4. Start with a 30-day pilot to validate results',
+        '4. Start with a 90-day pilot to validate results',
         '5. Scale gradually as you see ROI'
     ];
 
@@ -461,7 +461,7 @@ function getRecommendations(data) {
     if (data.savingsPercent > 70) {
         recommendations.push({
             title: 'Immediate ROI Opportunity',
-            text: `Your ${data.savingsPercent}% potential cost reduction suggests AI lead generation would deliver immediate ROI. We recommend starting with a 30-day pilot to validate these projections with your specific ICP.`
+            text: `Your ${data.savingsPercent}% potential cost reduction suggests AI lead generation would deliver immediate ROI. We recommend starting with a 90-day pilot to validate these projections with your specific ICP.`
         });
     }
 

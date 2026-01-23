@@ -31,6 +31,12 @@
     <meta name="twitter:description" content="Book 15+ qualified sales meetings per month with AI-powered outreach. Scale your pipeline without hiring SDRs.">
     <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
 
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+    <meta name="keywords" content="AI lead generation, B2B SaaS marketing, sales automation, AI SDR, outbound sales, lead generation services, AI-powered outreach, sales development">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -135,6 +141,23 @@
 
         .logo-text span {
             color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
         }
 
         .nav-cta {
@@ -761,6 +784,10 @@
                 padding: 1rem 1.5rem;
             }
 
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
             .hero {
                 padding: 6rem 1.5rem 4rem;
             }
@@ -812,7 +839,7 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
                 <!-- Simplified fist/chart logo -->
                 <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
@@ -824,7 +851,10 @@
             </svg>
             <span class="logo-text">punch<span>Dev</span></span>
         </a>
-        <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -1066,6 +1096,109 @@
         document.querySelectorAll('.stat-card').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.15}s`;
         });
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://punchdev.net/#organization",
+          "name": "punchDev Marketing",
+          "legalName": "punchDev Marketing",
+          "url": "https://punchdev.net",
+          "logo": "https://punchdev.net/gdpic.webp",
+          "description": "AI-Powered Lead Generation for B2B SaaS Companies. We help businesses book 15+ qualified sales meetings per month using AI-powered outreach and personalized automation.",
+          "email": "georges@punchdev.net",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://punchdev.net/#founder",
+            "name": "Georges Duplessy",
+            "jobTitle": "Founder & Lead Generation Specialist",
+            "email": "georges@punchdev.net",
+            "image": "https://punchdev.net/gdpic.webp"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Worldwide"
+          },
+          "serviceType": [
+            "Lead Generation",
+            "AI Automation",
+            "B2B SaaS Marketing",
+            "Sales Development",
+            "Outbound Marketing",
+            "AI-Powered Outreach"
+          ],
+          "priceRange": "$$",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Lead Generation Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI-Powered Lead Generation",
+                  "description": "Automated lead generation and qualification using AI to book 15+ qualified meetings per month"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Personalized Outreach",
+                  "description": "AI-crafted personalized email campaigns based on prospect research and proven templates"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "24/7 Reply Handling",
+                  "description": "AI-powered reply classification, qualification, and meeting booking automation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "CRM Integration",
+                  "description": "Seamless integration with HubSpot, Salesforce, and other CRM platforms"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://punchdev.net/#website",
+          "url": "https://punchdev.net",
+          "name": "punchDev Marketing",
+          "description": "AI-Powered Lead Generation for B2B SaaS",
+          "publisher": {
+            "@id": "https://punchdev.net/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://punchdev.net/#webpage",
+          "url": "https://punchdev.net",
+          "name": "punchDev Marketing | AI-Powered Lead Generation for B2B SaaS",
+          "description": "punchDev Marketing helps B2B SaaS companies book 15+ qualified sales meetings per month using AI-powered lead generation and personalized outreach.",
+          "isPartOf": {
+            "@id": "https://punchdev.net/#website"
+          },
+          "about": {
+            "@id": "https://punchdev.net/#organization"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
     </script>
 
 </body>

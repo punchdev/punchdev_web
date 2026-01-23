@@ -1773,6 +1773,19 @@
             // Update chart
             updateChart(totalSDRCost, annualAICost, monthlyFee);
 
+            // Calculate 3-year projections for PDF
+            const year1SDR = totalSDRCost;
+            const year2SDR = totalSDRCost * 1.10; // 10% salary increase
+            const year3SDR = totalSDRCost * 1.21; // Compound increase
+
+            const year1AI = annualAICost;
+            const year2AI = monthlyFee * 12; // No setup fee in year 2
+            const year3AI = monthlyFee * 12 * 1.05; // 5% price increase
+
+            const total3YearSDR = year1SDR + year2SDR + year3SDR;
+            const total3YearAI = year1AI + year2AI + year3AI;
+            const total3YearSavings = total3YearSDR - total3YearAI;
+
             // Store current data for PDF generation
             currentCalculatorData = {
                 meetingsPerMonth,
@@ -1796,7 +1809,17 @@
                 aiCostPerMeeting,
                 savings,
                 savingsPercent,
-                breakEvenMonths
+                breakEvenMonths,
+                // 3-year projections
+                year1SDR,
+                year2SDR,
+                year3SDR,
+                year1AI,
+                year2AI,
+                year3AI,
+                total3YearSDR,
+                total3YearAI,
+                total3YearSavings
             };
 
             // Track calculator usage

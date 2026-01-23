@@ -1676,6 +1676,7 @@
         };
 
         let costChart = null;
+        let currentCalculatorData = {}; // Store current calculation for PDF generation
 
         // Update display values for sliders
         inputs.meetingGoal.addEventListener('input', (e) => {
@@ -1771,6 +1772,32 @@
 
             // Update chart
             updateChart(totalSDRCost, annualAICost, monthlyFee);
+
+            // Store current data for PDF generation
+            currentCalculatorData = {
+                meetingsPerMonth,
+                location,
+                rampMonths,
+                turnoverRate,
+                baseSalary,
+                benefits,
+                toolsCost,
+                sdrsNeeded,
+                rampCost,
+                annualTurnoverCost,
+                managementCost,
+                costPerSDR,
+                totalSDRCost,
+                setupFee,
+                monthlyFee,
+                annualAICost,
+                annualMeetings,
+                sdrCostPerMeeting,
+                aiCostPerMeeting,
+                savings,
+                savingsPercent,
+                breakEvenMonths
+            };
 
             // Track calculator usage
             gtag('event', 'calculator_use', {
@@ -1894,6 +1921,11 @@
 
             const email = document.getElementById('email').value;
             const goal = document.querySelector('input[name="goal"]:checked').value;
+            const submitButton = emailForm.querySelector('button[type="submit"]');
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Generating Report...';
 
             // Track conversion
             gtag('event', 'generate_lead', {
@@ -1902,12 +1934,28 @@
                 'goal': goal
             });
 
-            // TODO: Send to backend/Formspree
-            // For now, just show success and close modal
+            try {
+                // Call submitForm from calculator.js
+                const result = await submitForm(
+                    { email, goal },
+                    currentCalculatorData
+                );
 
-            alert('Thank you! Your report has been sent to ' + email);
-            modal.classList.remove('active');
-            emailForm.reset();
+                if (result.success) {
+                    alert('Success! Your personalized ROI report has been downloaded. Check your email for the full analysis and next steps.');
+                    modal.classList.remove('active');
+                    emailForm.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('There was an error generating your report. Please try again or contact georges@punchdev.net');
+            } finally {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Download My Report';
+            }
         });
 
         // Initial calculation
@@ -1935,6 +1983,12 @@
       }
     }
     </script>
+
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Calculator.js for form handling and PDF generation -->
+    <script src="calculator.js"></script>
 
 </body>
 

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NMK55H6FW2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | punchDev Marketing - AI Lead Generation Insights</title>
+    <meta name="description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing strategies, sales automation, and outbound tactics to scale your pipeline.">
+    <link rel="canonical" href="https://punchdev.net/blog/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://punchdev.net/blog/">
+    <meta property="og:title" content="Blog | punchDev Marketing - AI Lead Generation Insights">
+    <meta property="og:description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies.">
+    <meta property="og:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://punchdev.net/blog/">
+    <meta name="twitter:title" content="Blog | punchDev Marketing">
+    <meta name="twitter:description" content="Expert insights on AI-powered lead generation and B2B SaaS marketing.">
+    <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --punch-red: #C41E3A;
+            --punch-red-dark: #9B1830;
+            --punch-red-glow: rgba(196, 30, 58, 0.3);
+            --black: #0A0A0B;
+            --black-light: #141416;
+            --gray-900: #1A1A1D;
+            --gray-800: #27272A;
+            --gray-600: #52525B;
+            --gray-400: #A1A1AA;
+            --white: #FAFAFA;
+            --off-white: #E4E4E7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--punch-red);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--punch-red);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 4rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--punch-red-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--punch-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 4rem 8rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--gray-800);
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            text-decoration: none;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--punch-red);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--punch-red);
+        }
+
+        .blog-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gray-800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .blog-category {
+            color: var(--punch-red);
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .read-more {
+            color: var(--punch-red);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .blog-card:hover .read-more {
+            gap: 0.75rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 6rem 2rem;
+            color: var(--gray-600);
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            opacity: 0.3;
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray-400);
+        }
+
+        .empty-state p {
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .footer-contact {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: var(--punch-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .blog-container {
+                padding: 3rem 1.5rem 6rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
+            </svg>
+            <span class="logo-text">punch<span>Dev</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog/" class="active">Blog</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="section-label">Insights & Strategies</div>
+            <h1>Lead Generation Blog</h1>
+            <p class="hero-subtitle">Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies to scale your pipeline.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="blog-container">
+        <div class="blog-grid" id="blogGrid">
+
+            <!-- Blog Post 1 -->
+            <a href="/blog/posts/5-signs-you-need-ai-lead-generation.html" class="blog-card">
+                <div class="blog-card-image">
+                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
+                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="48" font-weight="bold" font-family="'Space Grotesk', sans-serif">AI</text>
+                        <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="14" font-family="'DM Sans', sans-serif">Lead Generation</text>
+                    </svg>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Lead Generation</span>
+                        <span>·</span>
+                        <span>7 min read</span>
+                        <span>·</span>
+                        <span>Jan 22, 2026</span>
+                    </div>
+                    <h3>5 Signs Your B2B SaaS Company Needs AI-Powered Lead Generation</h3>
+                    <p class="blog-excerpt">Is your sales team drowning in manual prospecting? Discover the 5 telltale signs it's time to automate your lead generation with AI-powered outreach and book more qualified meetings.</p>
+                    <span class="read-more">
+                        Read Article →
+                    </span>
+                </div>
+            </a>
+
+            <!-- Add future blog posts here -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
+                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
+                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
+            </svg>
+            <span>punchDev Marketing</span>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+        </div>
+    </footer>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "punchDev Marketing Blog",
+      "description": "Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation.",
+      "url": "https://punchdev.net/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "punchDev Marketing",
+        "url": "https://punchdev.net"
+      },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+</body>
+
+</html>

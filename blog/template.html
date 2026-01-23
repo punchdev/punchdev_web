@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NMK55H6FW2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TODO: Update these meta tags for each blog post -->
+    <title>[POST TITLE] | punchDev Marketing Blog</title>
+    <meta name="description" content="[150-160 character post description with primary keyword]">
+    <link rel="canonical" href="https://punchdev.net/blog/posts/[post-slug].html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://punchdev.net/blog/posts/[post-slug].html">
+    <meta property="og:title" content="[POST TITLE]">
+    <meta property="og:description" content="[Social media description - can be different from meta description]">
+    <meta property="og:image" content="https://punchdev.net/blog/images/[post-slug]-og.png">
+    <meta property="article:published_time" content="[YYYY-MM-DD]T00:00:00Z">
+    <meta property="article:author" content="Georges Duplessy">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://punchdev.net/blog/posts/[post-slug].html">
+    <meta name="twitter:title" content="[POST TITLE]">
+    <meta name="twitter:description" content="[Social media description]">
+    <meta name="twitter:image" content="https://punchdev.net/blog/images/[post-slug]-og.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+    <meta name="keywords" content="[keyword 1, keyword 2, keyword 3, etc.]">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --punch-red: #C41E3A;
+            --punch-red-dark: #9B1830;
+            --punch-red-glow: rgba(196, 30, 58, 0.3);
+            --black: #0A0A0B;
+            --black-light: #141416;
+            --gray-900: #1A1A1D;
+            --gray-800: #27272A;
+            --gray-600: #52525B;
+            --gray-400: #A1A1AA;
+            --white: #FAFAFA;
+            --off-white: #E4E4E7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--punch-red);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--punch-red);
+            transform: translateY(-2px);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        .article-category {
+            color: var(--punch-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .article-author {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--punch-red);
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .article-content strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: var(--punch-red);
+            text-decoration: none;
+            border-bottom: 1px solid var(--punch-red);
+            transition: all 0.3s ease;
+        }
+
+        .article-content a:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--off-white);
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--punch-red);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: var(--gray-900);
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--gray-400);
+        }
+
+        .article-content code {
+            background: var(--gray-900);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--punch-red);
+        }
+
+        .article-content pre {
+            background: var(--gray-900);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--off-white);
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--punch-red);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--punch-red);
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .article-cta {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--punch-red-dark) 100%);
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--punch-red);
+        }
+
+        .article-cta h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .footer-contact {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: var(--punch-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .article-container {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.35rem;
+            }
+
+            .article-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
+            </svg>
+            <span class="logo-text">punch<span>Dev</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">[CATEGORY]</span>
+                <span>·</span>
+                <time datetime="[YYYY-MM-DD]">[Month DD, YYYY]</time>
+                <span>·</span>
+                <span>[X] min read</span>
+            </div>
+            <h1>[Your Compelling Blog Post Title Here]</h1>
+            <p class="article-subtitle">[An engaging subtitle or summary that hooks the reader and includes your primary keyword]</p>
+            <div class="article-author">
+                <img src="/gdpic.webp" alt="Georges Duplessy" class="author-avatar" width="48" height="48">
+                <div class="author-info">
+                    <div class="author-name">Georges Duplessy</div>
+                    <div class="author-title">Founder, punchDev Marketing</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-content">
+
+            <p><strong>Introduction paragraph with keyword in first 100 words.</strong> Hook the reader with a compelling problem or insight. This first paragraph should immediately address why they should keep reading.</p>
+
+            <h2>Main Section Heading (H2)</h2>
+
+            <p>Your main content goes here. Use clear, concise language. Break up text with subheadings, lists, and visual elements.</p>
+
+            <h3>Subsection Heading (H3)</h3>
+
+            <p>More detailed information. Include data, examples, and actionable insights.</p>
+
+            <ul>
+                <li><strong>Bullet point 1:</strong> Include specific examples</li>
+                <li><strong>Bullet point 2:</strong> Use data when possible</li>
+                <li><strong>Bullet point 3:</strong> Make it actionable</li>
+            </ul>
+
+            <blockquote>
+                "Use blockquotes for important insights or customer testimonials that you want to highlight."
+            </blockquote>
+
+            <h3>Another Subsection</h3>
+
+            <p>Continue with more valuable content. Include internal links to other blog posts or your main landing page when relevant.</p>
+
+            <div class="callout">
+                <div class="callout-title">💡 Pro Tip</div>
+                <p>Use callout boxes to highlight important tips, warnings, or key takeaways that you want readers to remember.</p>
+            </div>
+
+            <h2>Second Main Section</h2>
+
+            <p>Continue building on your main points. Each section should flow naturally to the next.</p>
+
+            <ol>
+                <li><strong>Step 1:</strong> Numbered lists work great for processes</li>
+                <li><strong>Step 2:</strong> Keep each step clear and actionable</li>
+                <li><strong>Step 3:</strong> End with a clear outcome</li>
+            </ol>
+
+            <!-- CTA Section -->
+            <div class="article-cta">
+                <h3>Ready to Scale Your Lead Generation?</h3>
+                <p>Let's discuss how punchDev can help you book 15+ qualified meetings per month using AI-powered outreach.</p>
+                <a href="/book.html" target="_blank" class="cta-button">
+                    Book a Free Strategy Call →
+                </a>
+            </div>
+
+            <h2>Conclusion</h2>
+
+            <p>Summarize key takeaways. Reinforce the main value proposition. End with a call to action - either to book a call, read another article, or implement what they learned.</p>
+
+            <p><strong>Key Takeaways:</strong></p>
+            <ul>
+                <li>Takeaway 1</li>
+                <li>Takeaway 2</li>
+                <li>Takeaway 3</li>
+            </ul>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
+                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
+                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
+            </svg>
+            <span>punchDev Marketing</span>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+        </div>
+    </footer>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "[POST TITLE]",
+      "description": "[POST DESCRIPTION]",
+      "image": "https://punchdev.net/blog/images/[post-slug]-og.png",
+      "author": {
+        "@type": "Person",
+        "name": "Georges Duplessy",
+        "url": "https://punchdev.net"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "punchDev Marketing",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://punchdev.net/gdpic.webp"
+        }
+      },
+      "datePublished": "[YYYY-MM-DD]",
+      "dateModified": "[YYYY-MM-DD]",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://punchdev.net/blog/posts/[post-slug].html"
+      }
+    }
+    </script>
+
+</body>
+
+</html>

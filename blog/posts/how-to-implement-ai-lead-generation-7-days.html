@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NMK55H6FW2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How to Implement AI Lead Generation in 7 Days | punchDev Marketing</title>
+    <meta name="description" content="A step-by-step guide to implementing AI-powered lead generation for B2B SaaS. Go from zero to booking qualified meetings in just one week.">
+    <link rel="canonical" href="https://punchdev.net/blog/posts/how-to-implement-ai-lead-generation-7-days.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://punchdev.net/blog/posts/how-to-implement-ai-lead-generation-7-days.html">
+    <meta property="og:title" content="How to Implement AI Lead Generation in 7 Days">
+    <meta property="og:description" content="Step-by-step guide to launching AI-powered lead generation for your B2B SaaS company in one week.">
+    <meta property="og:image" content="https://punchdev.net/gdpic.png">
+    <meta property="article:published_time" content="2026-02-16T00:00:00Z">
+    <meta property="article:author" content="Georges Duplessy">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://punchdev.net/blog/posts/how-to-implement-ai-lead-generation-7-days.html">
+    <meta name="twitter:title" content="How to Implement AI Lead Generation in 7 Days">
+    <meta name="twitter:description" content="Step-by-step guide to launching AI-powered lead generation in one week.">
+    <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+    <meta name="keywords" content="AI lead generation implementation, sales automation setup, AI SDR setup, lead generation automation, B2B SaaS outreach, automated prospecting">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --punch-red: #C41E3A;
+            --punch-red-dark: #9B1830;
+            --punch-red-glow: rgba(196, 30, 58, 0.3);
+            --black: #0A0A0B;
+            --black-light: #141416;
+            --gray-900: #1A1A1D;
+            --gray-800: #27272A;
+            --gray-600: #52525B;
+            --gray-400: #A1A1AA;
+            --white: #FAFAFA;
+            --off-white: #E4E4E7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--punch-red);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--punch-red);
+            transform: translateY(-2px);
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        .article-category {
+            color: var(--punch-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .article-author {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--punch-red);
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .article-content strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: var(--punch-red);
+            text-decoration: none;
+            border-bottom: 1px solid var(--punch-red);
+            transition: all 0.3s ease;
+        }
+
+        .article-content a:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--off-white);
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--punch-red);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: var(--gray-900);
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--gray-400);
+        }
+
+        .callout {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--punch-red);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--punch-red);
+            margin-bottom: 1rem;
+        }
+
+        .article-cta {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--punch-red-dark) 100%);
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--punch-red);
+        }
+
+        .article-cta h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .footer-contact {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: var(--punch-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .article-container {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.35rem;
+            }
+
+            .article-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
+            </svg>
+            <span class="logo-text">punch<span>Dev</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">Implementation Guide</span>
+                <span>·</span>
+                <time datetime="2026-02-16">February 16, 2026</time>
+                <span>·</span>
+                <span>12 min read</span>
+            </div>
+            <h1>How to Implement AI Lead Generation in 7 Days</h1>
+            <p class="article-subtitle">A practical, step-by-step guide to launching AI-powered lead generation for your B2B SaaS company in just one week.</p>
+            <div class="article-author">
+                <img src="/gdpic.webp" alt="Georges Duplessy" class="author-avatar" width="48" height="48" loading="lazy">
+                <div class="author-info">
+                    <div class="author-name">Georges Duplessy</div>
+                    <div class="author-title">Founder, punchDev Marketing</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="article-content">
+
+            <p>Most companies overthink AI lead generation. They spend months researching tools, debating strategies, and planning the perfect system. Meanwhile, their competitors are already booking meetings.</p>
+
+            <p>Here's the truth: you can go from zero to booking qualified meetings with AI-powered lead generation in just seven days. I've done it multiple times, and I'm going to show you exactly how.</p>
+
+            <p>This isn't theory. This is the exact process I use to implement AI lead generation for B2B SaaS companies. Follow these steps, and by the end of the week, you'll have your first automated campaigns running.</p>
+
+            <h2>Why 7 Days?</h2>
+
+            <p>Seven days is the sweet spot. It's enough time to do things right without overthinking every detail. More importantly, it forces you to focus on what actually matters: getting your first campaigns live and learning from real data.</p>
+
+            <p>The companies that succeed with AI lead generation are the ones that launch fast and iterate. The ones that fail spend months building the perfect system that never actually sends an email.</p>
+
+            <div class="callout">
+                <div class="callout-title">Before You Start</div>
+                <p>You'll need: access to your CRM, your ideal customer profile documented, 3-4 value propositions to test, and decision-making authority to move quickly. If you don't have these, get them before Day 1.</p>
+            </div>
+
+            <h2>Day 1: Define Your Target and Message</h2>
+
+            <h3>Morning: Build Your ICP (2 hours)</h3>
+
+            <p>Don't skip this step. AI lead generation is only as good as your targeting. Spend the morning answering these questions:</p>
+
+            <ul>
+                <li><strong>What companies are the best fit?</strong> Industry, size, growth stage, tech stack, location</li>
+                <li><strong>Who are the decision makers?</strong> Title, role, seniority level</li>
+                <li><strong>What triggers buying intent?</strong> Funding, hiring, product launches, pain points</li>
+                <li><strong>What disqualifies a prospect?</strong> Company size, tech stack, geography, existing solutions</li>
+            </ul>
+
+            <p>Write this down. Be specific. "Mid-market B2B SaaS companies" is too vague. "B2B SaaS companies with 50-200 employees, raised Series A in the last 12 months, currently hiring SDRs" is better.</p>
+
+            <h3>Afternoon: Craft Your Core Messages (2 hours)</h3>
+
+            <p>You need 3-4 different value propositions to test. Why? Because you don't know which one will resonate until you have data.</p>
+
+            <p>For each message, write:</p>
+
+            <ul>
+                <li><strong>Hook:</strong> Why should they care right now?</li>
+                <li><strong>Value prop:</strong> What specific outcome do you deliver?</li>
+                <li><strong>Proof:</strong> What evidence do you have it works?</li>
+                <li><strong>CTA:</strong> What do you want them to do?</li>
+            </ul>
+
+            <p>Keep it simple. Your first email isn't winning awards for creativity. It's starting conversations.</p>
+
+            <div class="callout">
+                <div class="callout-title">Pro Tip</div>
+                <p>Pull your best-performing cold emails from the past. AI can take what already works and make it better through personalization at scale.</p>
+            </div>
+
+            <h2>Day 2: Set Up Your Infrastructure</h2>
+
+            <h3>Technical Setup (3-4 hours)</h3>
+
+            <p>Today is about getting your systems connected and configured. Here's what you need:</p>
+
+            <p><strong>1. Email Infrastructure</strong></p>
+            <ul>
+                <li>Dedicated sending domains (not your main company domain)</li>
+                <li>SPF, DKIM, and DMARC records configured</li>
+                <li>Warm-up schedule in place if using new domains</li>
+            </ul>
+
+            <p><strong>2. CRM Integration</strong></p>
+            <ul>
+                <li>Connect your CRM to your AI platform</li>
+                <li>Set up custom fields for tracking campaign data</li>
+                <li>Create views for AI-generated leads</li>
+                <li>Configure lead routing to the right reps</li>
+            </ul>
+
+            <p><strong>3. Calendar Booking</strong></p>
+            <ul>
+                <li>Set up calendar links for qualified meetings</li>
+                <li>Create different meeting types if needed</li>
+                <li>Write confirmation and reminder email templates</li>
+            </ul>
+
+            <h3>What This Actually Looks Like</h3>
+
+            <p>If you're working with an AI lead generation partner like punchDev, we handle most of this technical setup for you. If you're building in-house, budget a full day for configuration and testing.</p>
+
+            <p>Don't get stuck here. Perfect is the enemy of done. Get it working, then optimize later.</p>
+
+            <h2>Day 3: Build Your Prospect List</h2>
+
+            <h3>List Building (Full Day)</h3>
+
+            <p>Now we turn your ICP into actual people to contact. This is where AI really shines.</p>
+
+            <p><strong>Step 1: Source Your Data (2 hours)</strong></p>
+
+            <p>Using your ICP from Day 1, build a list of companies that match. Tools like Apollo, ZoomInfo, or LinkedIn Sales Navigator can help, but AI platforms can also do this automatically based on your criteria.</p>
+
+            <p>Aim for at least 1,000 companies to start. More is better.</p>
+
+            <p><strong>Step 2: Identify Decision Makers (2 hours)</strong></p>
+
+            <p>For each company, identify 2-3 relevant contacts. Don't just target the top person. Often the VP who feels the pain is more responsive than the C-level exec.</p>
+
+            <p><strong>Step 3: Enrich Your Data (2 hours)</strong></p>
+
+            <p>This is where AI becomes invaluable. For each prospect, gather:</p>
+
+            <ul>
+                <li>Recent company news (funding, acquisitions, product launches)</li>
+                <li>Hiring patterns (are they scaling sales?)</li>
+                <li>Technology stack</li>
+                <li>Social media activity</li>
+                <li>Mutual connections</li>
+            </ul>
+
+            <p>This enrichment data is what powers personalization at scale.</p>
+
+            <div class="callout">
+                <div class="callout-title">Quality Check</div>
+                <p>Before moving on, manually review a sample of 20-30 prospects. Do they actually fit your ICP? Is the data accurate? Fix issues now before you start sending.</p>
+            </div>
+
+            <h2>Day 4: Configure Your AI System</h2>
+
+            <h3>AI Training and Setup (4-5 hours)</h3>
+
+            <p>Today you teach the AI how to sound like you. This is critical. Bad AI sounds robotic. Good AI sounds like a helpful human.</p>
+
+            <p><strong>1. Voice and Tone Training</strong></p>
+
+            <p>Feed the AI examples of your best emails, messaging, and content. The AI learns your:</p>
+
+            <ul>
+                <li>Writing style (formal vs casual, short vs detailed)</li>
+                <li>Brand voice (professional, friendly, data-driven)</li>
+                <li>Value propositions and key messages</li>
+                <li>Common objection handling</li>
+            </ul>
+
+            <p><strong>2. Personalization Rules</strong></p>
+
+            <p>Define how the AI should use enrichment data:</p>
+
+            <ul>
+                <li>When to mention funding rounds or news</li>
+                <li>How to reference hiring patterns</li>
+                <li>When to use mutual connections</li>
+                <li>Industry-specific talking points</li>
+            </ul>
+
+            <p><strong>3. Testing and Refinement</strong></p>
+
+            <p>Generate 20-30 test emails. Read them carefully. Do they sound natural? Are they too generic? Too long? Adjust the parameters and regenerate until you're happy.</p>
+
+            <blockquote>
+                "The difference between good and great AI outreach is in these training hours. Spend the time to get the voice right."
+            </blockquote>
+
+            <div class="article-cta">
+                <h3>Want Help Setting This Up?</h3>
+                <p>We can have your AI lead generation system up and running in days, not weeks. Book a strategy call to discuss your specific needs.</p>
+                <a href="/book.html" target="_blank" class="cta-button">
+                    Book a Free Strategy Call →
+                </a>
+            </div>
+
+            <h2>Day 5: Launch Your First Campaign</h2>
+
+            <h3>Go Live (3 hours)</h3>
+
+            <p>It's time. Today you launch your first automated campaign.</p>
+
+            <p><strong>Start Small and Test</strong></p>
+
+            <p>Don't blast your entire list on day one. Instead:</p>
+
+            <ul>
+                <li><strong>Segment 1:</strong> 100 prospects with message variant A</li>
+                <li><strong>Segment 2:</strong> 100 prospects with message variant B</li>
+                <li><strong>Segment 3:</strong> 100 prospects with message variant C</li>
+            </ul>
+
+            <p>This gives you data to optimize before scaling.</p>
+
+            <p><strong>Set Up Your Sequences</strong></p>
+
+            <p>A basic sequence looks like:</p>
+
+            <ol>
+                <li><strong>Day 1:</strong> Initial outreach email</li>
+                <li><strong>Day 4:</strong> Value-add follow-up (share resource, insight)</li>
+                <li><strong>Day 8:</strong> Different angle or case study</li>
+                <li><strong>Day 12:</strong> Final follow-up with breakup message</li>
+            </ol>
+
+            <p>The AI handles sending at optimal times, personalizing each message, and managing the sequence automatically.</p>
+
+            <p><strong>Monitor Like a Hawk</strong></p>
+
+            <p>For the first 24 hours, check responses frequently. You're looking for:</p>
+
+            <ul>
+                <li>Technical issues (emails not delivering, broken links)</li>
+                <li>Tone problems (messages sound off)</li>
+                <li>Targeting issues (wrong people responding)</li>
+                <li>Positive replies to respond to quickly</li>
+            </ul>
+
+            <h2>Day 6: Monitor and Optimize</h2>
+
+            <h3>Data Analysis (Full Day)</h3>
+
+            <p>You now have real data. Let's use it.</p>
+
+            <p><strong>Morning: Review Performance Metrics</strong></p>
+
+            <p>Look at:</p>
+
+            <ul>
+                <li><strong>Delivery rate:</strong> Should be 95%+ (if lower, check technical setup)</li>
+                <li><strong>Open rate:</strong> Should be 40-60% for cold emails</li>
+                <li><strong>Reply rate:</strong> 5-10% is healthy for first campaigns</li>
+                <li><strong>Positive reply rate:</strong> 1-3% interested replies is a good start</li>
+                <li><strong>Meeting booking rate:</strong> 0.5-1.5% of total sent</li>
+            </ul>
+
+            <p><strong>Afternoon: Iterate and Improve</strong></p>
+
+            <p>Based on your data:</p>
+
+            <ul>
+                <li>Which message variant performed best? Use it for the next batch</li>
+                <li>What objections are you seeing? Address them in follow-ups</li>
+                <li>Are certain industries or roles responding better? Double down</li>
+                <li>Are you getting "not interested" replies? Your targeting or messaging needs work</li>
+            </ul>
+
+            <p>Make your adjustments and launch the next batch of prospects.</p>
+
+            <div class="callout">
+                <div class="callout-title">Success Benchmark</div>
+                <p>If you're booking 1 meeting for every 100-150 emails sent, you're in good shape for a first campaign. Anything above 1% conversion is excellent. Below 0.5%? Time to revisit messaging and targeting.</p>
+            </div>
+
+            <h2>Day 7: Scale and Systematize</h2>
+
+            <h3>Scaling Up (3-4 hours)</h3>
+
+            <p>You've validated that the system works. Now it's time to scale.</p>
+
+            <p><strong>Morning: Expand Your Reach</strong></p>
+
+            <ul>
+                <li>Load your full prospect list (thousands, not hundreds)</li>
+                <li>Set up multiple campaigns targeting different segments</li>
+                <li>Configure daily sending limits (start with 50-100 per day per domain)</li>
+                <li>Set up automated responses for common questions</li>
+            </ul>
+
+            <p><strong>Afternoon: Build Your Processes</strong></p>
+
+            <p>Create systems so this runs smoothly:</p>
+
+            <ul>
+                <li><strong>Daily check-ins:</strong> 15 minutes to review new replies</li>
+                <li><strong>Weekly optimization:</strong> 1 hour to analyze data and adjust</li>
+                <li><strong>Response protocols:</strong> Who handles what types of replies</li>
+                <li><strong>Escalation paths:</strong> How do qualified leads get to sales</li>
+            </ul>
+
+            <p><strong>Set Your Success Metrics</strong></p>
+
+            <p>Define what success looks like going forward:</p>
+
+            <ul>
+                <li>Number of qualified meetings per week</li>
+                <li>Cost per qualified meeting</li>
+                <li>Reply rate and sentiment</li>
+                <li>Pipeline generated from AI campaigns</li>
+            </ul>
+
+            <h2>What Happens Next?</h2>
+
+            <p>By the end of week one, you should have:</p>
+
+            <ul>
+                <li>AI lead generation system fully operational</li>
+                <li>First campaigns running with real prospects</li>
+                <li>Data on what's working and what isn't</li>
+                <li>At least a few qualified conversations booked</li>
+                <li>Processes in place for ongoing management</li>
+            </ul>
+
+            <p>Week two is when things get interesting. You'll have enough data to optimize aggressively. By week four, you should be booking 10-15+ meetings per month consistently.</p>
+
+            <h3>Common Mistakes to Avoid</h3>
+
+            <p>I've seen companies derail their AI lead generation launch in predictable ways:</p>
+
+            <ul>
+                <li><strong>Overthinking before launching:</strong> You learn more from one week live than one month of planning</li>
+                <li><strong>Setting and forgetting:</strong> AI needs human oversight, especially in the first 30 days</li>
+                <li><strong>Targeting too broadly:</strong> Better to nail a narrow ICP than barely reach a wide one</li>
+                <li><strong>Writing like a robot:</strong> AI should amplify your voice, not replace it with generic copy</li>
+                <li><strong>Ignoring the data:</strong> If reply rates are low, your messaging or targeting is off. Fix it.</li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-title">Reality Check</div>
+                <p>This timeline assumes you have the authority to move quickly and the tools already in place. If you're building everything from scratch, add 1-2 weeks for vendor selection and technical setup.</p>
+            </div>
+
+            <h2>The Fast-Track Option</h2>
+
+            <p>Want to skip the learning curve? This is exactly what we do at punchDev. We can have your AI lead generation system live and booking meetings in under a week because we've done it dozens of times.</p>
+
+            <p>We handle:</p>
+
+            <ul>
+                <li>Technical infrastructure setup</li>
+                <li>ICP refinement and targeting</li>
+                <li>AI training and message development</li>
+                <li>Campaign launch and monitoring</li>
+                <li>Ongoing optimization based on data</li>
+            </ul>
+
+            <p>You get qualified meetings showing up on your calendar without hiring a single SDR.</p>
+
+            <p><a href="/blog/posts/5-signs-you-need-ai-lead-generation.html">Wondering if you're ready for AI lead generation?</a> Check out our guide on the five signs it's time to automate your outbound.</p>
+
+            <h2>Conclusion</h2>
+
+            <p>Implementing AI lead generation doesn't have to take months. With focus and the right process, you can go from zero to booking qualified meetings in seven days.</p>
+
+            <p>The key is to launch fast, learn from real data, and iterate aggressively. Companies that do this consistently book 3-5x more meetings than those still doing manual outbound.</p>
+
+            <p><strong>Key Takeaways:</strong></p>
+            <ul>
+                <li>Day 1-2: Define ICP, messaging, and set up infrastructure</li>
+                <li>Day 3-4: Build lists, enrich data, and train AI systems</li>
+                <li>Day 5: Launch with small test batches</li>
+                <li>Day 6: Analyze data and optimize</li>
+                <li>Day 7: Scale up and systematize processes</li>
+            </ul>
+
+            <p>Ready to get started? <a href="/book.html" target="_blank">Book a strategy call</a> and let's discuss how we can implement AI lead generation for your company.</p>
+
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
+                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
+                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
+            </svg>
+            <span>punchDev Marketing</span>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Implement AI Lead Generation in 7 Days",
+      "description": "A step-by-step guide to implementing AI-powered lead generation for B2B SaaS. Go from zero to booking qualified meetings in just one week.",
+      "image": "https://punchdev.net/gdpic.png",
+      "author": {
+        "@type": "Person",
+        "name": "Georges Duplessy",
+        "url": "https://punchdev.net"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "punchDev Marketing",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://punchdev.net/gdpic.webp"
+        }
+      },
+      "datePublished": "2026-02-16",
+      "dateModified": "2026-02-16",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://punchdev.net/blog/posts/how-to-implement-ai-lead-generation-7-days.html"
+      }
+    }
+    </script>
+
+</body>
+
+</html>

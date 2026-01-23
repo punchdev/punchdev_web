@@ -1,0 +1,11 @@
+# robots.txt for punchdev.net
+# Allow all crawlers to index main content
+
+User-agent: *
+Allow: /
+
+# Block redirect pages from indexing
+Disallow: /book.html
+
+# Sitemap location
+Sitemap: https://punchdev.net/sitemap.xml

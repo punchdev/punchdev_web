@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NMK55H6FW2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDR Cost vs AI Lead Generation ROI Calculator | punchDev Marketing</title>
+    <meta name="description" content="Calculate the true cost of hiring SDRs vs AI-powered lead generation. Free interactive calculator shows annual costs, savings, and ROI for B2B SaaS companies.">
+    <link rel="canonical" href="https://punchdev.net/tools/roi-calculator/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://punchdev.net/tools/roi-calculator/">
+    <meta property="og:title" content="SDR Cost vs AI Lead Generation ROI Calculator">
+    <meta property="og:description" content="Calculate the true cost of hiring SDRs vs AI-powered lead generation. See your potential savings instantly.">
+    <meta property="og:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://punchdev.net/tools/roi-calculator/">
+    <meta name="twitter:title" content="SDR Cost vs AI Lead Generation ROI Calculator">
+    <meta name="twitter:description" content="Calculate the true cost of hiring SDRs vs AI-powered lead generation.">
+    <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+    <meta name="keywords" content="SDR cost calculator, AI lead generation ROI, sales development cost, AI vs SDR, outbound sales calculator">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+        :root {
+            --punch-red: #C41E3A;
+            --punch-red-dark: #9B1830;
+            --punch-red-glow: rgba(196, 30, 58, 0.3);
+            --black: #0A0A0B;
+            --black-light: #141416;
+            --gray-900: #1A1A1D;
+            --gray-800: #27272A;
+            --gray-600: #52525B;
+            --gray-400: #A1A1AA;
+            --white: #FAFAFA;
+            --off-white: #E4E4E7;
+            --success-green: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--punch-red);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--punch-red);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 4rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--punch-red-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--punch-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+
+        .trust-badge svg {
+            color: var(--punch-red);
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 4rem 4rem 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 450px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Input Panel */
+        .input-panel {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--gray-800);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: sticky;
+            top: 120px;
+        }
+
+        .input-panel h2 {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--off-white);
+            font-size: 0.95rem;
+        }
+
+        .input-with-value {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .input-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--punch-red);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--gray-800);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--punch-red);
+            cursor: pointer;
+            border: 3px solid var(--black);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--punch-red);
+            cursor: pointer;
+            border: 3px solid var(--black);
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--gray-800);
+            border: 1px solid var(--gray-600);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: var(--punch-red);
+            background: var(--gray-900);
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+
+        /* Results Panel */
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--gray-800);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .result-card:hover {
+            border-color: var(--punch-red);
+            transform: translateY(-4px);
+        }
+
+        .result-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-400);
+        }
+
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-box {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gray-900);
+            border-radius: 12px;
+            border: 2px solid var(--gray-800);
+            transition: all 0.3s ease;
+        }
+
+        .cost-box.ai {
+            border-color: var(--punch-red);
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, var(--gray-900) 100%);
+        }
+
+        .cost-box-label {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .cost-box-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .cost-box.ai .cost-box-value {
+            color: var(--punch-red);
+        }
+
+        .cost-box-subtext {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .savings-highlight {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, var(--gray-900) 100%);
+            border: 2px solid var(--success-green);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .savings-label {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .savings-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .savings-subtext {
+            font-size: 1rem;
+            color: var(--gray-400);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-900);
+            border-radius: 12px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-card {
+            background: linear-gradient(135deg, var(--punch-red-dark) 0%, var(--punch-red) 100%);
+            border: 2px solid var(--punch-red);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .cta-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .cta-card p {
+            font-size: 1.1rem;
+            color: var(--off-white);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--black);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Email Capture Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--gray-900);
+            border: 2px solid var(--punch-red);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--white);
+        }
+
+        .modal-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--off-white);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gray-800);
+            border: 1px solid var(--gray-600);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--punch-red);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            border-color: var(--punch-red);
+        }
+
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+
+        .radio-option.selected {
+            border-color: var(--punch-red);
+            background: rgba(196, 30, 58, 0.1);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 8rem 4rem;
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 50%, var(--black) 100%);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .methodology-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-card:hover {
+            border-color: var(--punch-red);
+            transform: translateY(-4px);
+        }
+
+        .methodology-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--punch-red) 0%, var(--punch-red-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .methodology-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--white);
+        }
+
+        .methodology-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .methodology-card p {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .methodology-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .methodology-list li {
+            color: var(--gray-400);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .methodology-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--punch-red);
+            font-weight: bold;
+        }
+
+        .methodology-note {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            font-style: italic;
+            background: var(--black-light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--punch-red);
+            margin-top: 1rem;
+        }
+
+        .data-sources {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .data-sources h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .data-sources ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .data-sources li {
+            color: var(--gray-400);
+            padding: 0.75rem;
+            background: var(--black-light);
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .data-sources strong {
+            color: var(--punch-red);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 8rem 4rem;
+            background: var(--black);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--punch-red);
+        }
+
+        .faq-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+
+        .faq-item p {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .faq-item li {
+            color: var(--gray-400);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .faq-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--punch-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .faq-item a {
+            color: var(--punch-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .faq-item strong {
+            color: var(--off-white);
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 6rem 4rem;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border-top: 1px solid var(--gray-800);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .trust-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .trust-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .trust-text p {
+            color: var(--gray-400);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .trust-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .trust-text li {
+            color: var(--gray-400);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .trust-text li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--punch-red);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .trust-text strong {
+            color: var(--off-white);
+        }
+
+        .trust-cta {
+            margin-top: 2rem;
+        }
+
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: var(--punch-red);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .secondary-button:hover {
+            background: var(--punch-red);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .trust-stats {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--black);
+            border: 2px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            border-color: var(--punch-red);
+            transform: translateX(8px);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--punch-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .footer-contact {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: var(--punch-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .input-panel {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .calculator-section {
+                padding: 3rem 1.5rem 6rem;
+            }
+
+            .cost-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* New sections responsive */
+            .how-it-works {
+                padding: 4rem 1.5rem;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-card {
+                padding: 1.5rem;
+            }
+
+            .data-sources {
+                padding: 1.5rem;
+            }
+
+            .data-sources ul {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .faq-item {
+                padding: 1.5rem;
+            }
+
+            .trust-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .trust-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .trust-text h2 {
+                font-size: 2rem;
+            }
+
+            .stat-box:hover {
+                transform: translateY(-4px);
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
+            </svg>
+            <span class="logo-text">punch<span>Dev</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="section-label">Free ROI Calculator</div>
+            <h1>SDR Cost vs AI Lead Generation Calculator</h1>
+            <p class="hero-subtitle">Calculate the true cost of hiring SDRs versus using AI-powered lead generation. See your potential savings instantly.</p>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span>100% Free Tool</span>
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>No Credit Card Required</span>
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                    <span>Instant Results</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <h2>Your Details</h2>
+
+                <div class="input-group">
+                    <div class="input-with-value">
+                        <label for="meetingGoal">Monthly Meeting Goal</label>
+                        <span class="input-value" id="meetingGoalValue">20</span>
+                    </div>
+                    <input type="range" id="meetingGoal" min="5" max="50" value="20" step="5">
+                    <p class="input-hint">How many qualified sales meetings do you want per month?</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="location">Location</label>
+                    <select id="location">
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="eu">European Union</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <p class="input-hint">Where would you hire SDRs?</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="currentSDRs">Current SDR Count</label>
+                    <input type="number" id="currentSDRs" min="0" max="20" value="0">
+                    <p class="input-hint">How many SDRs do you currently have?</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="dealSize">Average Deal Size ($)</label>
+                    <input type="number" id="dealSize" min="1000" max="100000" value="15000" step="1000">
+                    <p class="input-hint">What's your average annual contract value?</p>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-with-value">
+                        <label for="rampTime">SDR Ramp Time (months)</label>
+                        <span class="input-value" id="rampTimeValue">4</span>
+                    </div>
+                    <input type="range" id="rampTime" min="1" max="6" value="4" step="1">
+                    <p class="input-hint">How long until new SDRs are fully productive?</p>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-with-value">
+                        <label for="turnoverRate">Annual Turnover Rate (%)</label>
+                        <span class="input-value" id="turnoverRateValue">25%</span>
+                    </div>
+                    <input type="range" id="turnoverRate" min="0" max="50" value="25" step="5">
+                    <p class="input-hint">What % of SDRs leave each year?</p>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel">
+
+                <!-- Cost Comparison Card -->
+                <div class="result-card">
+                    <h3>Annual Cost Comparison</h3>
+                    <div class="cost-comparison">
+                        <div class="cost-box sdr">
+                            <div class="cost-box-label">Traditional SDR Team</div>
+                            <div class="cost-box-value" id="sdrCost">$243,000</div>
+                            <div class="cost-box-subtext" id="sdrCount">3 SDRs required</div>
+                        </div>
+                        <div class="cost-box ai">
+                            <div class="cost-box-label">AI Lead Generation</div>
+                            <div class="cost-box-value" id="aiCost">$38,500</div>
+                            <div class="cost-box-subtext">punchDev service</div>
+                        </div>
+                    </div>
+
+                    <div class="savings-highlight">
+                        <div class="savings-label">💰 Your Annual Savings</div>
+                        <div class="savings-value" id="savings">$204,500</div>
+                        <div class="savings-subtext" id="savingsPercent">84% cost reduction</div>
+                    </div>
+                </div>
+
+                <!-- Key Metrics Card -->
+                <div class="result-card">
+                    <h3>Key Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-box">
+                            <div class="metric-label">SDR Cost/Meeting</div>
+                            <div class="metric-value" id="sdrCostPerMeeting">$1,013</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">AI Cost/Meeting</div>
+                            <div class="metric-value" id="aiCostPerMeeting">$160</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Break-even</div>
+                            <div class="metric-value" id="breakEven">< 1 mo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Card -->
+                <div class="result-card">
+                    <h3>3-Year Cost Projection</h3>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="cta-card">
+                    <h3>Get Your Detailed ROI Report</h3>
+                    <p>Download a personalized PDF report with full cost breakdown, 3-year projections, and implementation recommendations.</p>
+                    <button class="cta-button" id="getReportBtn">
+                        Download Full Report
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Methodology</div>
+                <h2>How This Calculator Works</h2>
+                <p class="section-subtitle">Our calculations are based on real-world data from B2B SaaS companies and industry benchmarks. Here's what we factor into the numbers.</p>
+            </div>
+
+            <div class="methodology-grid">
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>SDR Salary Data</h3>
+                    <p>Base salaries sourced from <strong>Glassdoor, Built In, and RepVue</strong> salary databases (2025 data). We add 25% for benefits (health insurance, 401k, payroll taxes) based on BLS employer cost averages.</p>
+                    <ul class="methodology-list">
+                        <li><strong>US:</strong> $70K base salary</li>
+                        <li><strong>UK:</strong> £45K (~$55K USD)</li>
+                        <li><strong>EU:</strong> €45K (~$50K USD)</li>
+                        <li><strong>Other:</strong> $45K (APAC/LATAM avg)</li>
+                    </ul>
+                </div>
+
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Ramp Time Costs</h3>
+                    <p>New SDRs take 3-6 months to reach full productivity. During ramp, they generate <strong>50% fewer meetings</strong> while earning full salary. We calculate lost opportunity cost at <strong>$500 per missed meeting</strong>.</p>
+                    <p class="methodology-note">This reflects the average value of a qualified meeting that could have been booked by a fully-ramped SDR.</p>
+                </div>
+
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Turnover Impact</h3>
+                    <p>Average SDR turnover is <strong>25-35% annually</strong> (Bridge Group, 2024). Replacement costs include recruiting fees (50% of base salary), lost productivity during ramp, and knowledge loss.</p>
+                    <p class="methodology-note">Higher turnover rates compound costs significantly—a 40% turnover rate can add $30K+ per SDR annually.</p>
+                </div>
+
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Hidden Costs</h3>
+                    <p>We include often-overlooked expenses:</p>
+                    <ul class="methodology-list">
+                        <li><strong>Sales tools:</strong> $200/mo per SDR (CRM, sales engagement, data providers)</li>
+                        <li><strong>Management overhead:</strong> $80K manager salary divided across team (if >3 SDRs)</li>
+                        <li><strong>Desk space:</strong> Not included (varies widely by location)</li>
+                    </ul>
+                </div>
+
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3>AI Pricing Model</h3>
+                    <p>Our AI lead generation pricing is based on punchDev's actual service tiers:</p>
+                    <ul class="methodology-list">
+                        <li><strong>≤15 meetings/mo:</strong> $3,000/mo</li>
+                        <li><strong>16-25 meetings/mo:</strong> $4,500/mo</li>
+                        <li><strong>26-35 meetings/mo:</strong> $6,000/mo</li>
+                        <li><strong>35+ meetings/mo:</strong> $7,500/mo</li>
+                    </ul>
+                    <p class="methodology-note">Includes $2,500 one-time setup fee (CRM integration, messaging templates, ICP research).</p>
+                </div>
+
+                <div class="methodology-card">
+                    <div class="methodology-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Performance Assumptions</h3>
+                    <p>We assume an average SDR books <strong>15 qualified meetings per month</strong> at full productivity. This is based on the Bridge Group's SDR Metrics Report (2024) median across B2B SaaS.</p>
+                    <p class="methodology-note">Your actual SDR performance may vary by ICP complexity, deal size, and market maturity. Enterprise ICPs typically yield 8-12 meetings/mo; SMB can exceed 20/mo.</p>
+                </div>
+            </div>
+
+            <div class="data-sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li><strong>Salary data:</strong> Glassdoor, Built In, RepVue (2025 Q1 data)</li>
+                    <li><strong>Benefits costs:</strong> U.S. Bureau of Labor Statistics Employer Costs Report</li>
+                    <li><strong>SDR performance benchmarks:</strong> Bridge Group SDR Metrics & Compensation Report 2024</li>
+                    <li><strong>Turnover rates:</strong> LinkedIn Workforce Report, Sales Talent Agency data</li>
+                    <li><strong>Tool costs:</strong> G2, Capterra public pricing (Outreach, SalesLoft, Apollo, ZoomInfo averages)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">FAQs</div>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Are these calculations accurate for my situation?</h3>
+                    <p>The calculator provides <strong>industry-average estimates</strong> based on real data from hundreds of B2B SaaS companies. Your actual costs may vary based on:</p>
+                    <ul>
+                        <li>Geographic location and local salary markets</li>
+                        <li>Your specific ICP complexity (enterprise vs SMB)</li>
+                        <li>Current sales processes and conversion rates</li>
+                        <li>Existing infrastructure and tooling</li>
+                    </ul>
+                    <p>For a <strong>customized analysis</strong> specific to your company, <a href="/book.html">book a free strategy call</a> where we'll review your actual numbers.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's included in the SDR cost calculation?</h3>
+                    <p>We calculate the <strong>true fully-loaded cost</strong> of an SDR, not just base salary:</p>
+                    <ul>
+                        <li><strong>Base salary</strong> (location-adjusted)</li>
+                        <li><strong>Benefits</strong> (25% of salary: health, 401k, payroll taxes)</li>
+                        <li><strong>Ramp costs</strong> (lost productivity during 1-6 month ramp period)</li>
+                        <li><strong>Turnover costs</strong> (recruiting, training, knowledge loss)</li>
+                        <li><strong>Tools & software</strong> ($200/mo: CRM, engagement platform, data)</li>
+                        <li><strong>Management overhead</strong> (if team >3 SDRs, proportional manager cost)</li>
+                    </ul>
+                    <p>We <strong>do NOT</strong> include desk space, onboarding costs, or commission (since that's performance-based and applies to both SDR and AI models).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How did you determine the AI pricing?</h3>
+                    <p>The AI costs shown are <strong>punchDev's actual service pricing</strong>:</p>
+                    <ul>
+                        <li>$2,500 one-time setup (CRM integration, messaging templates, ICP research)</li>
+                        <li>$3,000-$7,500/month based on meeting volume tiers</li>
+                    </ul>
+                    <p>This includes everything: AI research, email personalization, reply handling, meeting booking, CRM updates, and ongoing optimization. No hidden fees, no per-seat charges, no tool stack costs.</p>
+                    <p>Other AI SDR platforms may have different pricing structures. <a href="/book.html">Contact us</a> to discuss custom volume pricing.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I customize the calculation assumptions?</h3>
+                    <p>The calculator uses <strong>industry-standard assumptions</strong> to provide quick, reliable estimates. If you need custom assumptions (different SDR productivity rates, specific tool costs, unique benefits packages), <a href="/book.html">book a strategy call</a>.</p>
+                    <p>We'll create a fully customized financial model based on:</p>
+                    <ul>
+                        <li>Your actual or target SDR performance data</li>
+                        <li>Specific salary ranges for your market</li>
+                        <li>Your current tool stack costs</li>
+                        <li>Historical turnover and ramp time data</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Why is turnover such a big cost factor?</h3>
+                    <p>SDR turnover averages <strong>25-35% annually</strong>, which means:</p>
+                    <ul>
+                        <li>You lose a fully-ramped SDR every 3-4 years (on average)</li>
+                        <li>Replacement costs ~50% of base salary in recruiting fees alone</li>
+                        <li>3-6 months of lost productivity during new hire ramp</li>
+                        <li>Knowledge and relationship loss with prospects</li>
+                    </ul>
+                    <p>For a $70K SDR with 25% turnover and 4-month ramp, you're paying an extra <strong>$20K+ annually</strong> just from churn. This compounds with larger teams.</p>
+                    <p>AI lead generation has <strong>zero turnover cost</strong>—the "team" never quits, never needs vacation, and maintains institutional knowledge indefinitely.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if my situation is different from the defaults?</h3>
+                    <p>The calculator is designed for <strong>typical B2B SaaS companies</strong> targeting mid-market or enterprise accounts. It may underestimate or overestimate costs if you:</p>
+                    <ul>
+                        <li><strong>Sell to enterprise:</strong> SDRs may book fewer meetings (8-12/mo), increasing cost per meeting</li>
+                        <li><strong>Sell to SMB:</strong> SDRs may exceed 20 meetings/mo, making them more cost-effective</li>
+                        <li><strong>Have very low turnover:</strong> If you retain SDRs >3 years, your costs will be lower than shown</li>
+                        <li><strong>Pay above/below market:</strong> Adjust the "location" setting to approximate your salary range</li>
+                    </ul>
+                    <p>For a detailed analysis of your specific situation, <a href="/book.html">schedule a free consultation</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does AI actually work as well as human SDRs?</h3>
+                    <p>This is the most common objection we hear. The short answer: <strong>it depends on what you're optimizing for</strong>.</p>
+                    <p><strong>AI excels at:</strong></p>
+                    <ul>
+                        <li>Volume prospecting (100s-1000s of personalized emails per month)</li>
+                        <li>Consistent quality (no "bad days" or performance variance)</li>
+                        <li>Speed (instant reply handling, 24/7 operation)</li>
+                        <li>Data-driven optimization (A/B testing every variable)</li>
+                    </ul>
+                    <p><strong>Human SDRs excel at:</strong></p>
+                    <ul>
+                        <li>Complex objection handling and nuanced conversations</li>
+                        <li>Building relationships over long sales cycles</li>
+                        <li>Adapting to highly dynamic/emerging markets</li>
+                        <li>White-glove, fully custom outreach (5-10 touches per prospect)</li>
+                    </ul>
+                    <p>Most B2B SaaS companies find that <strong>AI can handle 70-80% of outbound prospecting</strong> while human SDRs focus on high-value, high-touch accounts. This is often the best of both worlds.</p>
+                    <p>See our <a href="/blog/posts/5-signs-you-need-ai-lead-generation.html">blog post on 5 signs you need AI lead generation</a> to assess fit for your situation.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What happens after I download the report?</h3>
+                    <p>You'll receive:</p>
+                    <ul>
+                        <li><strong>Instant PDF download</strong> with your personalized results</li>
+                        <li><strong>5-email educational sequence</strong> over 10 days covering AI lead generation strategy, implementation, and case studies</li>
+                        <li><strong>No sales calls</strong> unless you book one—we won't spam you</li>
+                    </ul>
+                    <p>You can unsubscribe from the email sequence at any time. We respect your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Social Proof Section -->
+    <section class="trust-section">
+        <div class="section-container">
+            <div class="trust-content">
+                <div class="trust-text">
+                    <h2>Built by Founders, For Founders</h2>
+                    <p>This calculator was created by <strong>Georges Duplessy</strong>, founder of punchDev Marketing, after working with dozens of B2B SaaS companies struggling with SDR hiring, retention, and costs.</p>
+                    <p>The formulas reflect <strong>real-world data</strong> from:</p>
+                    <ul>
+                        <li>50+ conversations with VP Sales and CROs about SDR team costs</li>
+                        <li>Industry salary and performance benchmarks (Bridge Group, Glassdoor, RepVue)</li>
+                        <li>3+ years operating AI-powered lead generation for B2B SaaS clients</li>
+                    </ul>
+                    <p>We built this calculator to help founders make <strong>informed decisions</strong> about how to scale outbound—whether that's hiring SDRs, using AI, or a hybrid approach.</p>
+                    <div class="trust-cta">
+                        <a href="/book.html" class="secondary-button">
+                            Schedule a Free Consultation
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="trust-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">B2B SaaS Companies Analyzed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">Average Cost Reduction with AI</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">< 30 days</div>
+                        <div class="stat-label">Average Implementation Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Modal -->
+    <div class="modal" id="emailModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h3>Get Your Full ROI Report</h3>
+            <p>Enter your email to receive a detailed PDF report with personalized recommendations and implementation guidance.</p>
+
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label>What's your primary goal?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="goal" value="scale" required>
+                            <span>Scale pipeline without hiring</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="goal" value="reduce">
+                            <span>Reduce sales development costs</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="goal" value="replace">
+                            <span>Replace underperforming SDR team</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="goal" value="explore">
+                            <span>Just exploring AI options</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%; justify-content: center;">
+                    Download My Report
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
+                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
+                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
+            </svg>
+            <span>punchDev Marketing</span>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+        </div>
+    </footer>
+
+    <script>
+        // Calculator Logic
+        const inputs = {
+            meetingGoal: document.getElementById('meetingGoal'),
+            location: document.getElementById('location'),
+            currentSDRs: document.getElementById('currentSDRs'),
+            dealSize: document.getElementById('dealSize'),
+            rampTime: document.getElementById('rampTime'),
+            turnoverRate: document.getElementById('turnoverRate')
+        };
+
+        const outputs = {
+            sdrCost: document.getElementById('sdrCost'),
+            aiCost: document.getElementById('aiCost'),
+            sdrCount: document.getElementById('sdrCount'),
+            savings: document.getElementById('savings'),
+            savingsPercent: document.getElementById('savingsPercent'),
+            sdrCostPerMeeting: document.getElementById('sdrCostPerMeeting'),
+            aiCostPerMeeting: document.getElementById('aiCostPerMeeting'),
+            breakEven: document.getElementById('breakEven')
+        };
+
+        // Salary defaults by location
+        const salaryDefaults = {
+            us: 70000,
+            uk: 55000,
+            eu: 50000,
+            other: 45000
+        };
+
+        let costChart = null;
+
+        // Update display values for sliders
+        inputs.meetingGoal.addEventListener('input', (e) => {
+            document.getElementById('meetingGoalValue').textContent = e.target.value;
+            calculate();
+        });
+
+        inputs.rampTime.addEventListener('input', (e) => {
+            document.getElementById('rampTimeValue').textContent = e.target.value;
+            calculate();
+        });
+
+        inputs.turnoverRate.addEventListener('input', (e) => {
+            document.getElementById('turnoverRateValue').textContent = e.target.value + '%';
+            calculate();
+        });
+
+        // Recalculate on all input changes
+        Object.values(inputs).forEach(input => {
+            input.addEventListener('change', calculate);
+            input.addEventListener('input', calculate);
+        });
+
+        function calculate() {
+            const meetingsPerMonth = parseInt(inputs.meetingGoal.value);
+            const location = inputs.location.value;
+            const rampMonths = parseInt(inputs.rampTime.value);
+            const turnoverRate = parseInt(inputs.turnoverRate.value) / 100;
+
+            // SDR Calculations
+            const baseSalary = salaryDefaults[location];
+            const benefits = baseSalary * 0.25;
+            const toolsCost = 200 * 12;
+
+            // Calculate number of SDRs needed (assume 15 meetings per SDR per month)
+            const sdrsNeeded = Math.ceil(meetingsPerMonth / 15);
+
+            // Ramp cost (meetings lost during ramp * estimated value)
+            const meetingsLostDuringRamp = (meetingsPerMonth * rampMonths * 0.5) / sdrsNeeded;
+            const costPerMeetingLost = 500;
+            const rampCost = meetingsLostDuringRamp * costPerMeetingLost;
+
+            // Turnover cost
+            const replacementCost = baseSalary * 0.5;
+            const annualTurnoverCost = turnoverRate * (replacementCost + rampCost);
+
+            // Management overhead (if >3 SDRs need a manager)
+            const managementCost = sdrsNeeded > 3 ? 80000 / sdrsNeeded : 0;
+
+            // Total SDR cost per person
+            const costPerSDR = baseSalary + benefits + rampCost + annualTurnoverCost + toolsCost + managementCost;
+            const totalSDRCost = costPerSDR * sdrsNeeded;
+
+            // AI Lead Gen Cost
+            const setupFee = 2500;
+            let monthlyFee;
+            if (meetingsPerMonth <= 15) {
+                monthlyFee = 3000;
+            } else if (meetingsPerMonth <= 25) {
+                monthlyFee = 4500;
+            } else if (meetingsPerMonth <= 35) {
+                monthlyFee = 6000;
+            } else {
+                monthlyFee = 7500;
+            }
+
+            const annualAICost = setupFee + (monthlyFee * 12);
+
+            // Calculate metrics
+            const annualMeetings = meetingsPerMonth * 12;
+            const sdrCostPerMeeting = totalSDRCost / annualMeetings;
+            const aiCostPerMeeting = annualAICost / annualMeetings;
+
+            const savings = totalSDRCost - annualAICost;
+            const savingsPercent = ((savings / totalSDRCost) * 100).toFixed(0);
+
+            const breakEvenMonths = setupFee / ((totalSDRCost / 12) - monthlyFee);
+
+            // Update outputs
+            outputs.sdrCost.textContent = '$' + totalSDRCost.toLocaleString('en-US', {maximumFractionDigits: 0});
+            outputs.aiCost.textContent = '$' + annualAICost.toLocaleString('en-US', {maximumFractionDigits: 0});
+            outputs.sdrCount.textContent = sdrsNeeded + (sdrsNeeded === 1 ? ' SDR required' : ' SDRs required');
+            outputs.savings.textContent = '$' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
+            outputs.savingsPercent.textContent = savingsPercent + '% cost reduction';
+            outputs.sdrCostPerMeeting.textContent = '$' + Math.round(sdrCostPerMeeting).toLocaleString('en-US');
+            outputs.aiCostPerMeeting.textContent = '$' + Math.round(aiCostPerMeeting).toLocaleString('en-US');
+
+            if (breakEvenMonths < 1) {
+                outputs.breakEven.textContent = '< 1 mo';
+            } else {
+                outputs.breakEven.textContent = Math.ceil(breakEvenMonths) + ' mo';
+            }
+
+            // Update chart
+            updateChart(totalSDRCost, annualAICost, monthlyFee);
+
+            // Track calculator usage
+            gtag('event', 'calculator_use', {
+                'meeting_goal': meetingsPerMonth,
+                'location': location,
+                'sdrs_needed': sdrsNeeded,
+                'savings': savings
+            });
+        }
+
+        function updateChart(sdrCost, aiCost, monthlyFee) {
+            const ctx = document.getElementById('costChart').getContext('2d');
+
+            // Calculate 3-year projection
+            const year1SDR = sdrCost;
+            const year2SDR = sdrCost * 1.10; // 10% salary increase
+            const year3SDR = sdrCost * 1.21;
+
+            const year1AI = aiCost;
+            const year2AI = monthlyFee * 12; // No setup fee
+            const year3AI = monthlyFee * 12 * 1.05; // 5% price increase
+
+            if (costChart) {
+                costChart.destroy();
+            }
+
+            costChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3'],
+                    datasets: [
+                        {
+                            label: 'SDR Team',
+                            data: [year1SDR, year2SDR, year3SDR],
+                            backgroundColor: 'rgba(161, 161, 170, 0.5)',
+                            borderColor: 'rgba(161, 161, 170, 1)',
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'AI Lead Gen',
+                            data: [year1AI, year2AI, year3AI],
+                            backgroundColor: 'rgba(196, 30, 58, 0.5)',
+                            borderColor: 'rgba(196, 30, 58, 1)',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#A1A1AA',
+                                font: {
+                                    family: "'Space Grotesk', sans-serif",
+                                    size: 14
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#A1A1AA',
+                                callback: function(value) {
+                                    return '$' + (value / 1000) + 'K';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(161, 161, 170, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#A1A1AA'
+                            },
+                            grid: {
+                                color: 'rgba(161, 161, 170, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Modal functionality
+        const modal = document.getElementById('emailModal');
+        const getReportBtn = document.getElementById('getReportBtn');
+        const closeModal = document.getElementById('closeModal');
+        const emailForm = document.getElementById('emailForm');
+
+        getReportBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Get Report'});
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Radio button visual selection
+        document.querySelectorAll('.radio-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.radio-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Form submission
+        emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const goal = document.querySelector('input[name="goal"]:checked').value;
+
+            // Track conversion
+            gtag('event', 'generate_lead', {
+                'value': 1,
+                'currency': 'USD',
+                'goal': goal
+            });
+
+            // TODO: Send to backend/Formspree
+            // For now, just show success and close modal
+
+            alert('Thank you! Your report has been sent to ' + email);
+            modal.classList.remove('active');
+            emailForm.reset();
+        });
+
+        // Initial calculation
+        calculate();
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SDR Cost vs AI Lead Generation ROI Calculator",
+      "description": "Free calculator to compare the cost of hiring SDRs versus using AI-powered lead generation for B2B SaaS companies.",
+      "url": "https://punchdev.net/tools/roi-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "punchDev Marketing",
+        "url": "https://punchdev.net"
+      }
+    }
+    </script>
+
+</body>
+
+</html>

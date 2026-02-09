@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://punchdev.net/blog/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -63,6 +63,54 @@
   <url>
     <loc>https://punchdev.net/blog/posts/state-of-b2b-saas-sales-2026.html</loc>
     <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/beyond-basic-chatbots-smb.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/calculating-true-roi-ai-lead-gen.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/is-your-smb-ready-for-ai.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/scalable-saas-lead-gen-tech-stack.html</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/cut-costs-ai-automation-smb.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/beyond-cold-email-ai-prospecting.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/implementing-first-ai-chatbot-smb.html</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://punchdev.net/blog/posts/ai-validating-product-market-fit.html</loc>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

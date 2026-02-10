@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NMK55H6FW2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Marketing & Sales Automation Capabilities | punchDev</title>
+    <meta name="description" content="Comprehensive guide to Claude Code's built-in marketing and sales automation capabilities. Skills, MCP integrations, and quick-win automations for B2B SaaS.">
+    <link rel="canonical" href="https://punchdev.net/claude-code-marketing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://punchdev.net/claude-code-marketing">
+    <meta property="og:title" content="Claude Code Marketing & Sales Automation Capabilities">
+    <meta property="og:description" content="Comprehensive guide to Claude Code's built-in marketing and sales automation capabilities.">
+    <meta property="og:image" content="https://punchdev.net/gdpic.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://punchdev.net/claude-code-marketing">
+    <meta name="twitter:title" content="Claude Code Marketing & Sales Automation Capabilities">
+    <meta name="twitter:description" content="Comprehensive guide to Claude Code's built-in marketing and sales automation capabilities.">
+    <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
+
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Georges Duplessy">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --punch-red: #C41E3A;
+            --punch-red-dark: #9B1830;
+            --punch-red-glow: rgba(196, 30, 58, 0.3);
+            --black: #0A0A0B;
+            --black-light: #141416;
+            --gray-900: #1A1A1D;
+            --gray-800: #27272A;
+            --gray-700: #3F3F46;
+            --gray-600: #52525B;
+            --gray-400: #A1A1AA;
+            --white: #FAFAFA;
+            --off-white: #E4E4E7;
+            --green: #10B981;
+            --purple: #A855F7;
+            --blue: #3B82F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, var(--black) 0%, transparent 100%);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--punch-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--punch-red);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--punch-red);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--punch-red);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 4rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--punch-red-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: var(--punch-red);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* TOC Sidebar */
+        .doc-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem;
+        }
+
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            border-left: 2px solid var(--gray-800);
+        }
+
+        .toc-list li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+        }
+
+        .toc-list a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .toc-list a:hover {
+            color: var(--punch-red);
+        }
+
+        .toc-list a.active {
+            color: var(--punch-red);
+            font-weight: 600;
+        }
+
+        /* Content */
+        .doc-content {
+            max-width: 800px;
+        }
+
+        .doc-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 120px;
+        }
+
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--punch-red);
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-section h3 {
+            font-size: 1.25rem;
+            margin: 2rem 0 1rem;
+            color: var(--white);
+        }
+
+        .doc-section h4 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--off-white);
+        }
+
+        .doc-section p {
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+        }
+
+        .doc-section a {
+            color: var(--punch-red);
+            text-decoration: none;
+        }
+
+        .doc-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        .doc-section ul, .doc-section ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--gray-400);
+        }
+
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .doc-section ul li::marker {
+            color: var(--punch-red);
+        }
+
+        /* Code blocks */
+        .code-block {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .code-block code {
+            color: var(--off-white);
+        }
+
+        .inline-code {
+            background: var(--gray-800);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            color: var(--punch-red);
+        }
+
+        /* Skill Cards */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--punch-red);
+            transform: translateY(-4px);
+        }
+
+        .skill-category {
+            display: inline-block;
+            background: rgba(196, 30, 58, 0.1);
+            color: var(--punch-red);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        /* MCP Cards */
+        .mcp-section {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .mcp-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mcp-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mcp-icon svg {
+            color: var(--blue);
+        }
+
+        .mcp-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .mcp-functions {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .mcp-function {
+            background: var(--black);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            overflow-x: auto;
+        }
+
+        .mcp-function .function-name {
+            color: var(--blue);
+        }
+
+        /* Automation Cards */
+        .automation-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .automation-card.featured {
+            border-color: var(--green);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--gray-900) 100%);
+        }
+
+        .automation-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .automation-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .automation-badge {
+            background: var(--green);
+            color: var(--black);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .automation-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .automation-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--black);
+            border: 1px solid var(--gray-800);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+        }
+
+        .automation-step-arrow {
+            color: var(--punch-red);
+            font-weight: 700;
+        }
+
+        /* Limitation Box */
+        .limitation-box {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .limitation-box h4 {
+            color: var(--purple);
+            margin: 0 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, var(--punch-red-dark) 0%, var(--black-light) 100%);
+            border: 2px solid var(--punch-red);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--black);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--gray-400);
+        }
+
+        .footer-contact a {
+            color: var(--punch-red);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .doc-container {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero, .doc-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
+                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
+                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
+                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
+                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
+                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
+            </svg>
+            <span class="logo-text">punch<span>Dev</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Documentation</div>
+            <h1>Claude Code <span class="highlight">Marketing & Sales Automation Capabilities</span></h1>
+            <p class="hero-subtitle">A comprehensive guide to built-in skills, MCP integrations, and automation workflows for marketing and sales teams.</p>
+        </div>
+    </section>
+
+    <!-- Documentation -->
+    <div class="doc-container">
+        <!-- TOC Sidebar -->
+        <aside class="toc-sidebar">
+            <div class="toc-title">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#built-in-skills">Built-In Skills</a></li>
+                <li><a href="#content-copywriting">Content & Copywriting</a></li>
+                <li><a href="#seo-traffic">SEO & Traffic</a></li>
+                <li><a href="#psychology-strategy">Psychology & Strategy</a></li>
+                <li><a href="#research-analysis">Research & Analysis</a></li>
+                <li><a href="#analytics-optimization">Analytics & Optimization</a></li>
+                <li><a href="#mcp-integrations">MCP Integrations</a></li>
+                <li><a href="#what-you-can-automate">What You CAN Automate</a></li>
+                <li><a href="#what-you-cannot-automate">What You CANNOT Automate</a></li>
+                <li><a href="#quick-wins">Quick Win Automations</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="doc-content">
+            <!-- Overview -->
+            <section id="overview" class="doc-section">
+                <div class="section-label">Introduction</div>
+                <h2>Overview</h2>
+                <p>Claude Code (claude.ai/code) is Anthropic's AI-powered CLI for software engineering tasks. Beyond code generation, it includes a robust ecosystem of marketing-focused skills and MCP (Model Context Protocol) integrations that enable direct automation of marketing and sales workflows.</p>
+                <p>This document outlines what's available out-of-the-box, what integrations exist, and practical automations you can implement today.</p>
+            </section>
+
+            <!-- Built-In Skills -->
+            <section id="built-in-skills" class="doc-section">
+                <div class="section-label">Capabilities</div>
+                <h2>Built-In Skills for Marketing & Sales</h2>
+                <p>Skills are invoked via <span class="inline-code">/skill-name</span> and provide specialized marketing capabilities without requiring additional setup.</p>
+            </section>
+
+            <!-- Content & Copywriting -->
+            <section id="content-copywriting" class="doc-section">
+                <h3>Content & Copywriting</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <span class="skill-category">Copywriting</span>
+                        <h4>/copywriting</h4>
+                        <p>Write, rewrite, or improve marketing copy for landing pages, pricing pages, features, about pages, and email sequences.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Email</span>
+                        <h4>/email-sequence</h4>
+                        <p>Generate role-based outbound email sequences for specific companies and personas.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Design</span>
+                        <h4>/frontend-design</h4>
+                        <p>Build marketing landing pages, web components, and dashboards with production-grade UI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO & Traffic -->
+            <section id="seo-traffic" class="doc-section">
+                <h3>SEO & Traffic</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <span class="skill-category">SEO</span>
+                        <h4>/programmatic-seo</h4>
+                        <p>Create SEO-driven pages at scale using templates and data. Ideal for directory, location, and comparison pages.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">SEO</span>
+                        <h4>/seo-audit</h4>
+                        <p>Audit and diagnose SEO issues on your site including technical SEO, meta tags, and on-page optimization.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Lead Gen</span>
+                        <h4>/free-tool-strategy</h4>
+                        <p>Plan, evaluate, or build free marketing tools (calculators, generators) for lead generation and SEO.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Psychology & Strategy -->
+            <section id="psychology-strategy" class="doc-section">
+                <h3>Psychology & Strategy</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <span class="skill-category">Strategy</span>
+                        <h4>/marketing-psychology</h4>
+                        <p>Apply psychological principles and mental models to marketing campaigns and messaging.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Strategy</span>
+                        <h4>/marketing-ideas</h4>
+                        <p>140+ proven marketing approaches organized by category. Generate campaign ideas and tactics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research & Analysis -->
+            <section id="research-analysis" class="doc-section">
+                <h3>Research & Analysis</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <span class="skill-category">Research</span>
+                        <h4>/research-company</h4>
+                        <p>Deep research on specific companies including positioning, tech stack, and go-to-market strategy.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Research</span>
+                        <h4>/research-seo</h4>
+                        <p>SEO consultant capabilities using Ahrefs, Semrush data for keyword research and competitive analysis.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">Research</span>
+                        <h4>/buyer-profile</h4>
+                        <p>Buyer psychology profiles generated from existing research on specific roles and industries.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics & Optimization -->
+            <section id="analytics-optimization" class="doc-section">
+                <h3>Analytics & Optimization</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <span class="skill-category">Analytics</span>
+                        <h4>/analytics-tracking</h4>
+                        <p>Set up GA4, conversion tracking, event tracking, UTM parameters, and Google Tag Manager.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">CRO</span>
+                        <h4>/onboarding-cro</h4>
+                        <p>Optimize post-signup onboarding flows and user activation metrics.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-category">CRO</span>
+                        <h4>/signup-flow-cro</h4>
+                        <p>Optimize signup/registration conversion rates and reduce drop-off.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MCP Integrations -->
+            <section id="mcp-integrations" class="doc-section">
+                <div class="section-label">Integrations</div>
+                <h2>MCP Integrations Available</h2>
+                <p>MCP (Model Context Protocol) enables Claude Code to interact directly with external services. Your current setup includes Zapier-connected tools for Gmail, Google Calendar, Google Contacts, and Google Sheets.</p>
+
+                <div class="mcp-section">
+                    <div class="mcp-header">
+                        <div class="mcp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <h3>Gmail</h3>
+                    </div>
+                    <div class="mcp-functions">
+                        <div class="mcp-function"><span class="function-name">gmail_send_email</span> — Send emails directly</div>
+                        <div class="mcp-function"><span class="function-name">gmail_create_draft</span> — Create draft emails</div>
+                        <div class="mcp-function"><span class="function-name">gmail_reply_to_email</span> — Auto-reply to emails</div>
+                        <div class="mcp-function"><span class="function-name">gmail_find_email</span> — Search emails</div>
+                        <div class="mcp-function"><span class="function-name">gmail_create_draft_reply</span> — Draft replies</div>
+                    </div>
+                </div>
+
+                <div class="mcp-section">
+                    <div class="mcp-header">
+                        <div class="mcp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <h3>Google Calendar</h3>
+                    </div>
+                    <div class="mcp-functions">
+                        <div class="mcp-function"><span class="function-name">google_calendar_create_detailed_event</span> — Create events with full details</div>
+                        <div class="mcp-function"><span class="function-name">google_calendar_quick_add_event</span> — Quick event from text</div>
+                        <div class="mcp-function"><span class="function-name">google_calendar_find_event</span> — Find events</div>
+                        <div class="mcp-function"><span class="function-name">google_calendar_update_event</span> — Update events</div>
+                    </div>
+                </div>
+
+                <div class="mcp-section">
+                    <div class="mcp-header">
+                        <div class="mcp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Google Contacts</h3>
+                    </div>
+                    <div class="mcp-functions">
+                        <div class="mcp-function"><span class="function-name">google_contacts_create_contact</span> — Add contacts</div>
+                        <div class="mcp-function"><span class="function-name">google_contacts_find_contact</span> — Find contacts</div>
+                        <div class="mcp-function"><span class="function-name">google_contacts_update_contact</span> — Update contacts</div>
+                    </div>
+                </div>
+
+                <div class="mcp-section">
+                    <div class="mcp-header">
+                        <div class="mcp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3>Google Sheets</h3>
+                    </div>
+                    <div class="mcp-functions">
+                        <div class="mcp-function"><span class="function-name">google_sheets_create_spreadsheet_row</span> — Add rows</div>
+                        <div class="mcp-function"><span class="function-name">google_sheets_lookup_spreadsheet_row</span> — Find data</div>
+                        <div class="mcp-function"><span class="function-name">google_sheets_update_spreadsheet_row</span> — Update data</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You CAN Automate -->
+            <section id="what-you-can-automate" class="doc-section">
+                <div class="section-label">Automation</div>
+                <h2>What You CAN Automate Now</h2>
+                <p>With your current setup, these workflows are fully automatable:</p>
+
+                <div class="automation-card featured">
+                    <div class="automation-header">
+                        <h3>1. Personalized Email Outreach Engine</h3>
+                        <span class="automation-badge">HIGH ROI</span>
+                    </div>
+                    <p>Research prospects, generate personalized outreach, and send emails automatically.</p>
+                    <div class="automation-steps">
+                        <div class="automation-step">Company list input</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Web Reader MCP research</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">/email-sequence generation</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Gmail MCP send</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Sheets MCP logging</div>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>2. LinkedIn Content Factory</h3>
+                    </div>
+                    <p>Generate LinkedIn posts and content at scale using copywriting skills.</p>
+                    <div class="automation-steps">
+                        <div class="automation-step">/copywriting posts</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">/free-tool-strategy lead magnets</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">/frontend-design landing pages</div>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>3. SEO Content Pipeline</h3>
+                    </div>
+                    <p>Create and audit SEO-optimized content at scale.</p>
+                    <div class="automation-steps">
+                        <div class="automation-step">/programmatic-seo pages</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">/seo-audit fixes</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">/research-seo keywords</div>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>4. Lead Management System</h3>
+                    </div>
+                    <p>Store, track, and manage leads with automated follow-ups.</p>
+                    <div class="automation-steps">
+                        <div class="automation-step">Sheets MCP storage</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Calendar MCP follow-ups</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Contacts MCP database</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You CANNOT Automate -->
+            <section id="what-you-cannot-automate" class="doc-section">
+                <h2>What You CANNOT Automate (Without Additional Tools)</h2>
+
+                <div class="limitation-box">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        LinkedIn Outreach
+                    </h4>
+                    <p>No LinkedIn MCP available. Requires LinkedIn API access or third-party tools. Use <span class="inline-code">/copywriting</span> for message templates and send manually.</p>
+                </div>
+
+                <div class="limitation-box">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        Reddit Posting
+                    </h4>
+                    <p>No Reddit MCP. Requires Reddit API access for automated posting.</p>
+                </div>
+
+                <div class="limitation-box">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        CRM Integration (Full)
+                    </h4>
+                    <p>Limited to Google Sheets for lead storage. HubSpot/Salesforce integration requires API keys or Zapier workflows.</p>
+                </div>
+
+                <div class="limitation-box">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        Social Media Scheduling
+                    </h4>
+                    <p>Would need additional MCPs like Buffer or Hootsuite for scheduled posting.</p>
+                </div>
+            </section>
+
+            <!-- Quick Wins -->
+            <section id="quick-wins" class="doc-section">
+                <div class="section-label">Implementation</div>
+                <h2>Quick Win Automations to Build</h2>
+                <p>High-impact automations you can implement immediately with your current setup:</p>
+
+                <div class="automation-card featured">
+                    <div class="automation-header">
+                        <h3>Recommended: Semi-Automated LinkedIn Outreach</h3>
+                        <span class="automation-badge">START HERE</span>
+                    </div>
+                    <p>Use <span class="inline-code">/copywriting</span> for message templates, manual sending (no LinkedIn MCP yet), and track in Google Sheets.</p>
+                    <p><strong>Why:</strong> LinkedIn is the highest-ROI channel for B2B SaaS. This approach balances personalization with efficiency.</p>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>Automated Email Follow-ups</h3>
+                    </div>
+                    <div class="automation-steps">
+                        <div class="automation-step">Web Reader research</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Gmail send</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Sheets activity log</div>
+                    </div>
+                    <p>Track all prospect activities in a shared Google Sheet for team visibility.</p>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>Content Multiplication Pipeline</h3>
+                    </div>
+                    <p>One blog post → 5 LinkedIn posts, 3 emails, 2 Reddit posts using <span class="inline-code">/copywriting</span> + <span class="inline-code">/frontend-design</span> for landing pages.</p>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-header">
+                        <h3>Prospect Research Automation</h3>
+                    </div>
+                    <div class="automation-steps">
+                        <div class="automation-step">Input: Company URL</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Web Reader MCP scrape</div>
+                        <span class="automation-step-arrow">→</span>
+                        <div class="automation-step">Sheets MCP database</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Ready to Automate Your Lead Generation?</h3>
+                <p>We can help you implement these automations and build custom workflows for your specific needs.</p>
+                <a href="/book.html" target="_blank" class="cta-button">
+                    Book a Strategy Call
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <span>punchDev Marketing</span>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active TOC highlighting
+        const sections = document.querySelectorAll('.doc-section[id]');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

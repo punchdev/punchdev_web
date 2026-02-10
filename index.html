@@ -531,6 +531,121 @@
             line-height: 1.6;
         }
 
+        /* How It Works Section */
+        .how-it-works {
+            padding: 8rem 4rem;
+            background: var(--black-light);
+            position: relative;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+        }
+
+        .how-it-works-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .how-it-works-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works-header p {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 100px;
+            right: 100px;
+            height: 2px;
+            background: var(--gray-800);
+            z-index: 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--punch-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--punch-red);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(196, 30, 58, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--punch-red);
+        }
+
+        .step-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-item p {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Social Proof Section */
         .social-proof {
             padding: 8rem 4rem;
@@ -784,6 +899,241 @@
             border: 2px solid #10B981;
         }
 
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 4rem;
+            background: var(--black-light);
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+        }
+
+        .faq-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .faq-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .faq-header p {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--gray-600);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--white);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--punch-red);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--gray-400);
+            line-height: 1.7;
+        }
+
+        .faq-answer-content a {
+            color: var(--punch-red);
+            text-decoration: none;
+        }
+
+        .faq-answer-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Who This Is For Section */
+        .who-section {
+            padding: 8rem 4rem;
+            position: relative;
+        }
+
+        .who-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-800), transparent);
+        }
+
+        .who-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .who-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .who-header p {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+        }
+
+        .who-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .who-column {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+        }
+
+        .who-column.for {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .who-column.not-for {
+            border-color: var(--gray-800);
+        }
+
+        .who-column-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .who-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .who-column.for .who-icon {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .who-column.for .who-icon svg {
+            color: #10B981;
+        }
+
+        .who-column.not-for .who-icon {
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        .who-column.not-for .who-icon svg {
+            color: #A855F7;
+        }
+
+        .who-column-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .who-list {
+            list-style: none;
+        }
+
+        .who-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-800);
+            color: var(--gray-400);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .who-list li:last-child {
+            border-bottom: none;
+        }
+
+        .who-list.for li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .who-list.not-for li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #A855F7;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
         /* About Section */
         .about {
             padding: 8rem 4rem;
@@ -985,6 +1335,14 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
             .calculator-callout-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1025,6 +1383,32 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-item {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 1.5rem 1.25rem;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-column {
+                padding: 2rem 1.5rem;
             }
 
             .calculator-callout-content {
@@ -1202,6 +1586,63 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="how-it-works-header">
+            <div class="section-label">How It Works</div>
+            <h2>From Setup to Booked Meetings in 4 Steps</h2>
+            <p>We handle the heavy lifting so you can focus on closing deals.</p>
+        </div>
+        <div class="steps-container">
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3>AI Identifies Prospects</h3>
+                    <p>We configure AI to find decision-makers at companies matching your ICP, using multiple data sources for accuracy.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Personalized Outreach</h3>
+                    <p>AI crafts hyper-personalized emails referencing prospects' recent activity, achieving 3-5x response rates.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>24/7 Reply Handling</h3>
+                    <p>AI classifies responses, qualifies interest, and books meetings directly into your calendar—even at 2 AM.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>CRM Integration</h3>
+                    <p>All leads and context flow into your CRM, so your team knows exactly who they're calling and why.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Social Proof Section
     <section class="social-proof">
         <div class="social-proof-content">
@@ -1278,6 +1719,120 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-header">
+            <div class="section-label">FAQ</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about our AI lead generation service.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">How much does it cost?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        One-time setup fee of $2,500, then monthly retainers from $3K-$7.5K depending on your target meeting volume. Most clients save $70K-160K annually compared to hiring equivalent SDR headcount. Use our <a href="/tools/roi-calculator/">free ROI calculator</a> to see your specific numbers.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does setup take?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Initial setup takes 2-3 weeks. This includes ICP definition, data source configuration, email sequence development, and CRM integration. You'll see your first AI-personalized emails sent within week 1, with full ramp-up by week 3.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What CRMs do you integrate with?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We integrate seamlessly with HubSpot and Salesforce—covering 90% of B2B SaaS companies. For custom CRM setups, we can work with your team via API or webhooks. All leads include full context: source, engagement history, and qualification notes.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What makes your AI different from other SDR automation?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Three key differentiators: (1) Our AI personalizes every email based on prospect's recent activity, not just mail-merge templates—this drives 3-5x higher response rates. (2) 24/7 reply handling means no hot lead goes cold overnight. (3) We're a full-service solution, not DIY software—you get strategy, execution, and ongoing optimization.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you guarantee meeting numbers?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We commit to specific targets based on your market, ICP, and starting point. Our clients consistently book 15+ qualified meetings per month within 60 days. If we don't hit agreed benchmarks, we continue working at no cost until we do. Your success is our success.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What industries do you work with?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We specialize in B2B SaaS across verticals: dev tools, marketing tech, HR tech, finance tech, and healthcare IT. Ideal customers have $1M-$50M ARR, sell to businesses (not consumers), and have deal sizes $5K+. If you're not sure if you're a fit, <a href="/book.html">book a call</a> and we'll tell you honestly.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What happens if I already have SDRs?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We're not suggesting firing anyone. Most clients start with AI supplementing their existing team—handling top-of-funnel prospecting while SDRs focus on warmer leads and account-based selling. As AI proves itself, you can naturally scale back SDR headcount through attrition, saving $80K+ per rep.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="who-section">
+        <div class="who-header">
+            <div class="section-label">Ideal Fit</div>
+            <h2>Who This Is For (And Who It's Not)</h2>
+            <p>Transparency saves us both time. Here's exactly who we work best with.</p>
+        </div>
+        <div class="who-grid">
+            <div class="who-column for">
+                <div class="who-column-header">
+                    <div class="who-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Ideal Customer</h3>
+                </div>
+                <ul class="who-list for">
+                    <li><strong>VP Sales / Head of Sales</strong> at B2B SaaS company (10-200 employees) who needs to scale pipeline without adding headcount</li>
+                    <li><strong>SaaS Founder/CEO</strong> (Seed to Series B, $1M-$20M ARR) whose team is overwhelmed by prospecting and can't afford SDRs yet</li>
+                    <li><strong>Companies with proven product-market fit</strong> generating $50K+ MRR who need consistent, qualified meetings to accelerate growth</li>
+                    <li><strong>Teams using HubSpot or Salesforce</strong> (or willing to integrate) who want leads flowing directly into their existing workflow</li>
+                    <li><strong>Decision-makers ready to move fast</strong>—you want results in weeks, not months of committee meetings</li>
+                </ul>
+            </div>
+            <div class="who-column not-for">
+                <div class="who-column-header">
+                    <div class="who-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Not a Fit (Yet)</h3>
+                </div>
+                <ul class="who-list not-for">
+                    <li><strong>B2C companies</strong>—we specialize in B2B SaaS sales cycles, not consumer marketing or e-commerce</li>
+                    <li><strong>Pre-PMF startups</strong>—if you're still figuring out your ideal customer profile, focus there first. AI can't sell an undefined product.</li>
+                    <li><strong>Companies with complex regulatory barriers</strong>—healthcare providers, fintechs with heavy compliance requirements may need specialized approaches</li>
+                    <li><strong>Tiny deal sizes</strong>—if your average contract value is under $5K, the economics don't work for either of us</li>
+                    <li><strong>Teams expecting instant magic</strong>—AI is powerful, but setup and optimization take 2-3 weeks. If you need leads tomorrow, we're not the right fit.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about">
         <div class="about-grid">
@@ -1290,8 +1845,8 @@
             <div class="about-content">
                 <div class="section-label">About</div>
                 <h2>Built by Someone Who's Been in Your Shoes</h2>
-                <p>I've watched talented sales reps waste half their day on manual prospecting, while founders burned cash hiring SDRs who couldn't deliver consistent pipeline. I built punchDev to fix both problems.</p>
-                <p>We combine proven sales strategies with AI automation to help SaaS companies book more qualified meetings without the overhead of a large SDR team. My clients typically see 15+ qualified meetings within the first 60 days.</p>
+                <p>I've spent the last decade building and scaling sales organizations for B2B SaaS companies. I've watched talented sales reps waste half their day on manual prospecting, while founders burned cash hiring SDRs who couldn't deliver consistent pipeline. I built punchDev to fix both problems.</p>
+                <p>After seeing AI revolutionize prospecting across three different SaaS companies, I realized this wasn't just a productivity hack—it was a fundamental shift in how B2B sales should work. I founded punchDev to bring this capability to every SaaS company that's ready to scale efficiently.</p>
                 <div class="credentials">
                     <div class="credential">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1299,7 +1854,7 @@
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                             <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
-                        Built Sales Processes for 3 SaaS Companies
+                        10+ years building sales processes for 3 B2B SaaS companies
                     </div>
                     <div class="credential">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1307,7 +1862,23 @@
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                             <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
-                        Engineering Background in AI/ML Systems
+                        Engineering background in AI/ML systems development
+                    </div>
+                    <div class="credential">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Managed $2M+ annual outbound budgets across multiple companies
+                    </div>
+                    <div class="credential">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Scaled SDR teams from 0 to 20+ reps
                     </div>
                 </div>
             </div>
@@ -1382,7 +1953,7 @@
         }, observerOptions);
 
         // Observe elements for scroll animation
-        document.querySelectorAll('.stat-card, .feature-card, .problem-content, .solution-header, .about-content, .cta-content').forEach(el => {
+        document.querySelectorAll('.stat-card, .feature-card, .problem-content, .solution-header, .how-it-works-header, .step-item, .who-header, .who-column, .faq-header, .faq-item, .about-content, .cta-content').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1397,6 +1968,29 @@
         // Stagger stat cards
         document.querySelectorAll('.stat-card').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // Stagger step items
+        document.querySelectorAll('.step-item').forEach((step, index) => {
+            step.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
     </script>
 

@@ -1,122 +1,427 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>PlantWatch – Account & Data Deletion Request</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Request deletion of your PlantWatch app account and data. Complete privacy compliance with GDPR and data protection regulations.">
-  <link rel="canonical" href="https://punchdev.net/plantwatch_delete.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — PlantWatch</title>
+  <meta name="description" content="Request deletion of your PlantWatch account and associated data." />
+  <link rel="canonical" href="https://punchdev.net/plantwatch_delete.html" />
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; line-height: 1.5; }
-    h1, h2 { margin-top: 1.5rem; }
-    label { display: block; margin-top: 1rem; font-weight: 600; }
-    input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.2rem; cursor: pointer; }
-    .note { font-size: 0.9rem; color: #555; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #1a3d2b;
+      --green-mid: #2d6a4f;
+      --green-accent: #4caf78;
+      --green-light: #74c69d;
+      --cream: #f5f0e8;
+      --cream-dark: #ede7d9;
+      --text-dark: #1a2e1a;
+      --text-muted: #5a7a5a;
+      --white: #ffffff;
+      --radius: 14px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: rgba(26, 61, 43, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--green-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .nav-cta {
+      background: var(--green-accent);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 9px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--green-light); transform: translateY(-1px); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #0d2318 60%, #1a3d2b 100%);
+      padding: 120px 24px 60px;
+      text-align: center;
+    }
+
+    .page-header .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(76, 175, 120, 0.2);
+      border: 1px solid rgba(76, 175, 120, 0.4);
+      color: var(--green-light);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .page-header .sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .content-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: 0 2px 24px rgba(26, 61, 43, 0.08);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--cream-dark);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      margin-bottom: 1rem;
+      color: #3a4a3a;
+      font-size: 0.97rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #3a4a3a;
+      font-size: 0.97rem;
+    }
+
+    strong { font-weight: 600; color: var(--text-dark); }
+
+    a {
+      color: var(--green-mid);
+      text-decoration: none;
+    }
+
+    a:hover { color: var(--green-accent); text-decoration: underline; }
+
+    .note {
+      background: var(--cream);
+      border-left: 3px solid var(--green-accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* FORM */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+
+    input[type="email"]:focus,
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green-accent);
+      box-shadow: 0 0 0 3px rgba(76, 175, 120, 0.15);
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a7a5a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #c0392b;
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover { background: #a93226; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--green-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--green-accent); }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .content-card { padding: 28px 20px; }
+    }
   </style>
 </head>
 <body>
-  <h1>PlantWatch account & data deletion</h1>
 
-  <p>
-    This page is for users of the <strong>PlantWatch</strong> app who want to request deletion of their app account and associated data.
-  </p>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="https://punchdev.github.io/plantwatch_web/">
+      <div class="nav-logo-icon">🌿</div>
+      PlantWatch
+    </a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.gduplessy.plantwatch" target="_blank" rel="noopener">
+      Get the App
+    </a>
+  </nav>
 
-  <h2>How to request deletion</h2>
-  <ol>
-    <li>Fill out the form below using the same email address you use in the PlantWatch app.</li>
-    <li>Tell us whether you want your <strong>account and all associated data</strong> deleted or only specific data types.</li>
-    <li>Submit the form. You will receive a confirmation email or in‑app notification when your request has been processed.</li>
-  </ol>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="badge">🗑️ Account</div>
+    <h1>Delete Your Account</h1>
+    <p class="sub">Request deletion of your PlantWatch account and all associated data.</p>
+  </div>
 
-  <h2>What data is deleted or kept</h2>
-  <p>
-    When you request deletion of your PlantWatch account, the following data will normally be deleted:
-  </p>
-  <ul>
-    <li>Account identifiers (such as your PlantWatch account ID and login email stored in the app backend).</li>
-    <li>Profile data (display name, avatar or profile photo if stored by PlantWatch).</li>
-    <li>Plant tracking content (plant entries, notes, reminders, schedules, logs, and other activity saved in your account).</li>
-    <li>In‑app preferences (app settings associated with your account).</li>
-  </ul>
+  <!-- CONTENT -->
+  <div class="content-wrap">
+    <div class="content-card">
 
-  <p>
-    The following data may be <strong>retained for a limited period</strong> where required for security, fraud prevention, or legal compliance (for example, tax or accounting rules):
-  </p>
-  <ul>
-    <li>Basic transaction and billing records (if you made purchases or subscriptions through PlantWatch).</li>
-    <li>Security, audit, and abuse‑prevention logs.</li>
-  </ul>
+      <h2>How it works</h2>
+      <ol>
+        <li>Fill out the form below using the email address linked to your PlantWatch account.</li>
+        <li>Choose whether you want your full account deleted or only specific data types.</li>
+        <li>Submit — we'll confirm by email and process your request within 30 days.</li>
+      </ol>
 
-  <p class="note">
-    Unless a longer retention period is legally required, we aim to delete or irreversibly anonymize personal data within 30 days of confirming your request.
-  </p>
+      <h2>What gets deleted</h2>
+      <p>When you delete your account, we remove:</p>
+      <ul>
+        <li>Your account credentials and login email</li>
+        <li>All plant entries, photos, notes, reminders, and care logs</li>
+        <li>In-app preferences and settings</li>
+      </ul>
 
-  <h2>Submit a deletion request</h2>
+      <p>The following may be <strong>retained temporarily</strong> where required by law:</p>
+      <ul>
+        <li>Billing and transaction records (if applicable)</li>
+        <li>Security and fraud-prevention logs</li>
+      </ul>
 
-  <!-- Replace YOUR_FORM_ID with your real Formspree form ID -->
-  <form
-    action="https://formspree.io/f/xnjnegkw"
-    method="POST"
-  >
-    <label for="email">Email address used with PlantWatch</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      required
-      placeholder="you@example.com"
-    >
+      <div class="note">
+        We aim to delete or irreversibly anonymize all personal data within <strong>30 days</strong> of confirming your request.
+      </div>
 
-    <label for="request-type">What would you like to delete?</label>
-    <select id="request-type" name="request_type" required>
-      <option value="">Please choose…</option>
-      <option value="account_and_all_data">
-        Delete my PlantWatch account and all associated data
-      </option>
-      <option value="specific_data_types">
-        Delete specific data types only (describe below)
-      </option>
-    </select>
+      <h2>Submit a deletion request</h2>
 
-    <label for="data-types">
-      If requesting deletion of specific data types, describe them here
-    </label>
-    <textarea
-      id="data-types"
-      name="data_types_details"
-      rows="4"
-      placeholder="Example: delete my plant photos but keep my account active."
-    ></textarea>
+      <form action="https://formspree.io/f/xnjnegkw" method="POST">
 
-    <label for="region">
-      Country or region (for data protection laws)
-    </label>
-    <input
-      type="text"
-      id="region"
-      name="region"
-      placeholder="e.g., United States, EU, UK, etc."
-    >
+        <div class="form-group">
+          <label for="email">Email address used with PlantWatch</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
 
-    <label for="additional-info">
-      Additional information (optional)
-    </label>
-    <textarea
-      id="additional-info"
-      name="additional_info"
-      rows="4"
-      placeholder="Any other details that can help us locate your account or process your request."
-    ></textarea>
+        <div class="form-group">
+          <label for="request-type">What would you like to delete?</label>
+          <select id="request-type" name="request_type" required>
+            <option value="">Please choose…</option>
+            <option value="account_and_all_data">Delete my account and all associated data</option>
+            <option value="specific_data_types">Delete specific data types only (describe below)</option>
+          </select>
+        </div>
 
-    <!-- Optional hidden field to help you filter in Formspree -->
-    <input type="hidden" name="request_source" value="Google Play Store deletion link">
+        <div class="form-group">
+          <label for="data-types">If deleting specific data types, describe them here</label>
+          <textarea id="data-types" name="data_types_details" placeholder="Example: delete my plant photos but keep my account active."></textarea>
+        </div>
 
-    <button type="submit">Submit deletion request</button>
-  </form>
+        <div class="form-group">
+          <label for="region">Country or region</label>
+          <input type="text" id="region" name="region" placeholder="e.g., United States, EU, UK…" />
+        </div>
 
-  <p class="note">
-    If you have trouble using this form, you can also contact support using the email address listed on the PlantWatch Google Play store listing.
-  </p>
+        <div class="form-group">
+          <label for="additional-info">Additional information (optional)</label>
+          <textarea id="additional-info" name="additional_info" placeholder="Any other details that can help us locate your account or process your request."></textarea>
+        </div>
+
+        <input type="hidden" name="request_source" value="PlantWatch deletion page" />
+
+        <button type="submit" class="btn-submit">
+          🗑️ Submit deletion request
+        </button>
+      </form>
+
+      <p style="margin-top:1.5rem; font-size:0.875rem; color:var(--text-muted);">
+        Having trouble with this form? Email us directly at <a href="mailto:gduplessy@punchdev.net">gduplessy@punchdev.net</a>.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="https://punchdev.github.io/plantwatch_web/">
+        <div class="footer-logo-icon">🌿</div>
+        PlantWatch
+      </a>
+      <div class="footer-links">
+        <a href="https://www.tiktok.com/@plantwatchapp" target="_blank" rel="noopener">TikTok @plantwatchapp</a>
+        <a href="https://play.google.com/store/apps/details?id=com.gduplessy.plantwatch" target="_blank" rel="noopener">Google Play</a>
+        <a href="https://punchdev.net/plantwatch_privacy.html">Privacy Policy</a>
+        <a href="https://punchdev.net/plantwatch_delete.html">Delete Account</a>
+      </div>
+      <p class="footer-copy">© 2026 PlantWatch. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

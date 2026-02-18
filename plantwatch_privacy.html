@@ -1,141 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - PlantWatch App</title>
-  <meta name="description" content="PlantWatch privacy policy. Learn how we collect, use, and protect your plant tracking data with Supabase, PlantNet API, and Claude AI integration.">
-  <link rel="canonical" href="https://punchdev.net/plantwatch_privacy.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PlantWatch</title>
+  <meta name="description" content="PlantWatch privacy policy. Learn how we collect, use, and protect your plant tracking data." />
+  <link rel="canonical" href="https://punchdev.net/plantwatch_privacy.html" />
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      line-height: 1.6;
-      color: #333;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #1a3d2b;
+      --green-mid: #2d6a4f;
+      --green-accent: #4caf78;
+      --green-light: #74c69d;
+      --cream: #f5f0e8;
+      --cream-dark: #ede7d9;
+      --text-dark: #1a2e1a;
+      --text-muted: #5a7a5a;
+      --white: #ffffff;
+      --radius: 14px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
-    h1 {
-      font-size: 2rem;
-      margin-top: 0;
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: rgba(26, 61, 43, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--green-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .nav-cta {
+      background: var(--green-accent);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 9px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--green-light); transform: translateY(-1px); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #0d2318 60%, #1a3d2b 100%);
+      padding: 120px 24px 60px;
+      text-align: center;
+    }
+
+    .page-header .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(76, 175, 120, 0.2);
+      border: 1px solid rgba(76, 175, 120, 0.4);
+      color: var(--green-light);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .page-header .updated {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .content-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: 0 2px 24px rgba(26, 61, 43, 0.08);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--cream-dark);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-top: 1.25rem;
       margin-bottom: 0.5rem;
     }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-    h3 {
-      font-size: 1.2rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #333;
-    }
+
     p {
       margin-bottom: 1rem;
+      color: #3a4a3a;
+      font-size: 0.97rem;
     }
-    ul {
+
+    ul, ol {
       margin-bottom: 1rem;
       padding-left: 1.5rem;
     }
+
     li {
       margin-bottom: 0.5rem;
+      color: #3a4a3a;
+      font-size: 0.97rem;
     }
+
+    strong { font-weight: 600; color: var(--text-dark); }
+
     a {
-      color: #0066cc;
+      color: var(--green-mid);
       text-decoration: none;
     }
+
     a:hover {
+      color: var(--green-accent);
       text-decoration: underline;
     }
-    strong {
-      font-weight: 600;
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--green-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--green-accent); }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .content-card { padding: 28px 20px; }
     }
   </style>
 </head>
 <body>
-  <h1 id="privacy-policy-for-plantwatch">Privacy Policy for PlantWatch</h1>
-  <p><strong>Last Updated:</strong> January 7, 2026</p>
 
-  <h2 id="introduction">Introduction</h2>
-  <p>PlantWatch ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="https://punchdev.github.io/plantwatch_web/">
+      <div class="nav-logo-icon">🌿</div>
+      PlantWatch
+    </a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.gduplessy.plantwatch" target="_blank" rel="noopener">
+      Get the App
+    </a>
+  </nav>
 
-  <h2 id="information-we-collect">Information We Collect</h2>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="badge">📋 Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: January 7, 2026</p>
+  </div>
 
-  <h3 id="information-you-provide">Information You Provide</h3>
-  <ul>
-    <li><strong>Account Information</strong>: Email address and password for authentication</li>
-    <li><strong>Plant Data</strong>: Plant names, species, photos, care schedules, and notes</li>
-    <li><strong>Timeline Events</strong>: Care logs, watering schedules, and activity history</li>
-  </ul>
+  <!-- CONTENT -->
+  <div class="content-wrap">
+    <div class="content-card">
 
-  <h3 id="automatically-collected-information">Automatically Collected Information</h3>
-  <ul>
-    <li><strong>Device Information</strong>: Device type, operating system version</li>
-    <li><strong>Usage Data</strong>: App interactions, features used, and error logs</li>
-    <li><strong>Photos</strong>: Plant photos you upload for identification and tracking</li>
-  </ul>
+      <h2>Introduction</h2>
+      <p>PlantWatch ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
-  <h2 id="how-we-use-your-information">How We Use Your Information</h2>
-  <p>We use your information to:</p>
-  <ul>
-    <li>Provide and maintain the PlantWatch service</li>
-    <li>Identify plants using AI (PlantNet API)</li>
-    <li>Generate care recommendations using AI (Claude API)</li>
-    <li>Send care reminder notifications</li>
-    <li>Sync your plant data across devices</li>
-    <li>Improve app functionality and user experience</li>
-    <li>Respond to support requests</li>
-  </ul>
+      <h2>Information We Collect</h2>
 
-  <h2 id="data-storage-and-security">Data Storage and Security</h2>
-  <ul>
-    <li><strong>Local Storage</strong>: Plant data is stored locally on your device using SQLite</li>
-    <li><strong>Cloud Sync</strong>: Data is synced to Supabase (PostgreSQL) for backup and multi-device access</li>
-    <li><strong>Photos</strong>: Thumbnails stored locally and in Supabase Storage</li>
-    <li><strong>Encryption</strong>: All data transmitted over HTTPS; passwords hashed using bcrypt</li>
-    <li><strong>Access Control</strong>: Row-level security ensures you can only access your own data</li>
-  </ul>
+      <h3>Information You Provide</h3>
+      <ul>
+        <li><strong>Account Information</strong>: Email address and password for authentication</li>
+        <li><strong>Plant Data</strong>: Plant names, species, photos, care schedules, and notes</li>
+        <li><strong>Timeline Events</strong>: Care logs, watering schedules, and activity history</li>
+      </ul>
 
-  <h2 id="third-party-services">Third-Party Services</h2>
-  <p>We use the following third-party services:</p>
-  <ul>
-    <li><strong>Supabase</strong>: Authentication and database hosting (<a href="https://supabase.com/privacy">https://supabase.com/privacy</a>)</li>
-    <li><strong>PlantNet API</strong>: Plant identification (<a href="https://plantnet.org">https://plantnet.org</a>)</li>
-    <li><strong>Anthropic Claude API</strong>: Care recommendations (<a href="https://www.anthropic.com/privacy">https://www.anthropic.com/privacy</a>)</li>
-  </ul>
-  <p>These services have their own privacy policies governing their use of your information.</p>
+      <h3>Automatically Collected Information</h3>
+      <ul>
+        <li><strong>Device Information</strong>: Device type, operating system version</li>
+        <li><strong>Usage Data</strong>: App interactions, features used, and error logs</li>
+        <li><strong>Photos</strong>: Plant photos you upload for identification and tracking</li>
+      </ul>
 
-  <h2 id="data-retention">Data Retention</h2>
-  <ul>
-    <li><strong>Active Accounts</strong>: Data retained while your account is active</li>
-    <li><strong>Account Deletion</strong>: You can delete your account at any time. All personal data will be permanently deleted within 30 days</li>
-    <li><strong>Local Data</strong>: Remains on your device until you uninstall the app</li>
-  </ul>
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Provide and maintain the PlantWatch service</li>
+        <li>Identify plants using AI (PlantNet API)</li>
+        <li>Generate care recommendations using AI (Claude API)</li>
+        <li>Send care reminder notifications</li>
+        <li>Sync your plant data across devices</li>
+        <li>Improve app functionality and user experience</li>
+        <li>Respond to support requests</li>
+      </ul>
 
-  <h2 id="your-rights">Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li>Access your personal data</li>
-    <li>Correct inaccurate data</li>
-    <li>Delete your account and data</li>
-    <li>Export your data in JSON format</li>
-    <li>Opt-out of care reminder notifications</li>
-    <li>Withdraw consent for data processing</li>
-  </ul>
+      <h2>Data Storage and Security</h2>
+      <ul>
+        <li><strong>Local Storage</strong>: Plant data is stored locally on your device using SQLite</li>
+        <li><strong>Cloud Sync</strong>: Data is synced to Supabase (PostgreSQL) for backup and multi-device access</li>
+        <li><strong>Photos</strong>: Thumbnails stored locally and in Supabase Storage</li>
+        <li><strong>Encryption</strong>: All data transmitted over HTTPS; passwords hashed using bcrypt</li>
+        <li><strong>Access Control</strong>: Row-level security ensures you can only access your own data</li>
+      </ul>
 
-  <h2 id="children-s-privacy">Children's Privacy</h2>
-  <p>PlantWatch is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+      <h2>Third-Party Services</h2>
+      <p>We use the following third-party services:</p>
+      <ul>
+        <li><strong>Supabase</strong>: Authentication and database hosting — <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
+        <li><strong>PlantNet API</strong>: Plant identification — <a href="https://plantnet.org" target="_blank" rel="noopener">plantnet.org</a></li>
+        <li><strong>Anthropic Claude API</strong>: Care recommendations — <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a></li>
+      </ul>
+      <p>These services have their own privacy policies governing their use of your information.</p>
 
-  <h2 id="changes-to-this-policy">Changes to This Policy</h2>
-  <p>We may update this Privacy Policy periodically. We will notify you of significant changes via email or in-app notification.</p>
+      <h2>Data Retention</h2>
+      <ul>
+        <li><strong>Active Accounts</strong>: Data retained while your account is active</li>
+        <li><strong>Account Deletion</strong>: You can delete your account at any time. All personal data will be permanently deleted within 30 days</li>
+        <li><strong>Local Data</strong>: Remains on your device until you uninstall the app</li>
+      </ul>
 
-  <h2 id="contact-us">Contact Us</h2>
-  <p>If you have questions about this Privacy Policy, please contact:</p>
-  <p><strong>Email</strong>: gduplessy@punchdev.net</p>
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Correct inaccurate data</li>
+        <li>Delete your account and data</li>
+        <li>Export your data in JSON format</li>
+        <li>Opt-out of care reminder notifications</li>
+        <li>Withdraw consent for data processing</li>
+      </ul>
 
-  <h2 id="your-consent">Your Consent</h2>
-  <p>By using PlantWatch, you consent to this Privacy Policy.</p>
+      <h2>Children's Privacy</h2>
+      <p>PlantWatch is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy periodically. We will notify you of significant changes via email or in-app notification.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:gduplessy@punchdev.net">gduplessy@punchdev.net</a>.</p>
+
+      <h2>Your Consent</h2>
+      <p>By using PlantWatch, you consent to this Privacy Policy.</p>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="https://punchdev.github.io/plantwatch_web/">
+        <div class="footer-logo-icon">🌿</div>
+        PlantWatch
+      </a>
+      <div class="footer-links">
+        <a href="https://www.tiktok.com/@plantwatchapp" target="_blank" rel="noopener">TikTok @plantwatchapp</a>
+        <a href="https://play.google.com/store/apps/details?id=com.gduplessy.plantwatch" target="_blank" rel="noopener">Google Play</a>
+        <a href="https://punchdev.net/plantwatch_privacy.html">Privacy Policy</a>
+        <a href="https://punchdev.net/plantwatch_delete.html">Delete Account</a>
+      </div>
+      <p class="footer-copy">© 2026 PlantWatch. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

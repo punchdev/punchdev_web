@@ -1,945 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NMK55H6FW2');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NMK55H6FW2');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | punchDev Marketing - AI Lead Generation Insights</title>
-    <meta name="description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing strategies, sales automation, and outbound tactics to scale your pipeline.">
-    <link rel="canonical" href="https://punchdev.net/blog/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | punchDev Marketing - AI Lead Generation Insights</title>
+  <meta name="description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies to scale your pipeline.">
+  <link rel="canonical" href="https://punchdev.net/blog/">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://punchdev.net/blog/">
-    <meta property="og:title" content="Blog | punchDev Marketing - AI Lead Generation Insights">
-    <meta property="og:description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies.">
-    <meta property="og:image" content="https://punchdev.net/gdpic.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://punchdev.net/blog/">
+  <meta property="og:title" content="Blog | punchDev Marketing - AI Lead Generation Insights">
+  <meta property="og:description" content="Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies.">
+  <meta property="og:image" content="https://punchdev.net/gdpic.png">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://punchdev.net/blog/">
-    <meta name="twitter:title" content="Blog | punchDev Marketing">
-    <meta name="twitter:description" content="Expert insights on AI-powered lead generation and B2B SaaS marketing.">
-    <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://punchdev.net/blog/">
+  <meta name="twitter:title" content="Blog | punchDev Marketing">
+  <meta name="twitter:description" content="Expert insights on AI-powered lead generation and B2B SaaS marketing.">
+  <meta name="twitter:image" content="https://punchdev.net/gdpic.png">
 
-    <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#C41E3A">
-    <meta name="author" content="Georges Duplessy">
-    <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#C41E3A">
+  <meta name="author" content="Georges Duplessy">
+  <meta name="robots" content="index, follow">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --punch-red: #C41E3A;
-            --punch-red-dark: #9B1830;
-            --punch-red-glow: rgba(196, 30, 58, 0.3);
-            --black: #0A0A0B;
-            --black-light: #141416;
-            --gray-900: #1A1A1D;
-            --gray-800: #27272A;
-            --gray-600: #52525B;
-            --gray-400: #A1A1AA;
-            --white: #FAFAFA;
-            --off-white: #E4E4E7;
-        }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0A0A0B;
+      color: #FAFAFA;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03; pointer-events: none; z-index: 9999;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0B; }
+    ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.1rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(10,10,11,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(39,39,42,0.5);
+      transition: all 0.3s ease;
+    }
+    .site-nav.scrolled {
+      background: rgba(10,10,11,0.95);
+      border-bottom-color: #27272A;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.65rem;
+    }
+    .nav-logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1.1rem; color: #FAFAFA;
+    }
+    .nav-logo-text span { color: #C41E3A; }
+    .nav-links {
+      display: flex; gap: 2rem; align-items: center;
+    }
+    .nav-links a {
+      color: #A1A1AA; font-weight: 500; font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #FAFAFA; }
+    .nav-cta {
+      background: #C41E3A; color: #FAFAFA !important;
+      padding: 0.6rem 1.25rem; border-radius: 8px;
+      font-weight: 600 !important; font-size: 0.85rem !important;
+      border: 2px solid #C41E3A; transition: all 0.25s ease !important;
+    }
+    .nav-cta:hover {
+      background: transparent !important;
+      color: #C41E3A !important;
+    }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* ── Page header ── */
+    .page-header {
+      padding-top: 7rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid #27272A;
+      background: linear-gradient(180deg, #141416 0%, #0A0A0B 100%);
+    }
+    .page-header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0 2rem;
+    }
+    .section-label {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #C41E3A; margin-bottom: 0.75rem;
+    }
+    .page-header h1 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: #FAFAFA; line-height: 1.15; margin-bottom: 0.65rem;
+    }
+    .page-header p {
+      color: #A1A1AA; font-size: 1rem; max-width: 520px;
+      line-height: 1.7; margin-bottom: 1.75rem;
+    }
 
-        /* Grain overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-        }
+    /* ── Tag filter ── */
+    .tag-filters {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .tag-pill {
+      background: transparent; color: #A1A1AA;
+      border: 1px solid #27272A; border-radius: 100px;
+      padding: 0.35rem 0.9rem;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 0.8rem; cursor: pointer; white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tag-pill:hover { border-color: #52525B; color: #FAFAFA; }
+    .tag-pill.active { background: #C41E3A; color: #FAFAFA; border-color: #C41E3A; }
 
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.1;
-        }
+    /* ── Post list ── */
+    #postList {
+      max-width: 860px; margin: 0 auto;
+    }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.5rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 11, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-800);
-        }
+    /* ── Post row ── */
+    .post-row {
+      display: flex; gap: 1.25rem; align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #27272A;
+      background: transparent;
+      transition: background 0.2s ease;
+      cursor: pointer;
+    }
+    .post-row:hover { background: rgba(196,30,58,0.03); }
+    .post-row.featured {
+      align-items: flex-start;
+      padding: 1.75rem 2rem;
+      background: rgba(255,255,255,0.015);
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
+    /* ── Thumbnail ── */
+    .post-thumb {
+      width: 64px; height: 64px; flex-shrink: 0;
+      border-radius: 10px; border: 1px solid #27272A;
+      display: flex; align-items: center; justify-content: center;
+      transition: width 0.2s, height 0.2s;
+    }
+    .post-row.featured .post-thumb { width: 80px; height: 80px; }
 
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-        }
+    /* ── Post body ── */
+    .post-body { flex: 1; min-width: 0; }
+    .post-badges {
+      display: flex; gap: 0.6rem; align-items: center;
+      margin-bottom: 0.5rem; flex-wrap: wrap;
+    }
+    .post-tag-badge {
+      display: inline-block;
+      background: rgba(196,30,58,0.12); color: #C41E3A;
+      border: 1px solid rgba(196,30,58,0.25);
+      border-radius: 100px; padding: 0.15rem 0.65rem;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 0.72rem; letter-spacing: 0.04em;
+    }
+    .post-featured-badge {
+      display: none;
+      background: rgba(196,30,58,0.08); color: #C41E3A;
+      border: 1px solid rgba(196,30,58,0.2);
+      border-radius: 100px; padding: 0.15rem 0.65rem;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .post-row.featured .post-featured-badge { display: inline-block; }
+    .post-meta {
+      color: #52525B; font-size: 0.82rem; margin-left: auto;
+    }
+    .post-title {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem; color: #FAFAFA; line-height: 1.3;
+      transition: color 0.2s ease;
+    }
+    .post-row.featured .post-title { font-size: 1.15rem; margin-bottom: 0.6rem; }
+    .post-row:hover .post-title { color: #C41E3A; }
+    .post-excerpt {
+      display: none; color: #A1A1AA; font-size: 0.9rem;
+      line-height: 1.65; text-wrap: pretty;
+    }
+    .post-row.featured .post-excerpt { display: block; }
 
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--white);
-        }
+    /* ── Arrow ── */
+    .post-arrow {
+      flex-shrink: 0; color: #52525B; font-size: 1.1rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .post-row:hover .post-arrow { transform: translateX(4px); color: #C41E3A; }
 
-        .logo-text span {
-            color: var(--punch-red);
-        }
+    /* ── Email capture ── */
+    .email-capture {
+      margin: 0; padding: 1.75rem 2rem;
+      border-bottom: 1px solid #27272A;
+      background: linear-gradient(135deg, #141416 0%, #1A1A1D 100%);
+      border-left: 3px solid #C41E3A;
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .email-capture-copy { flex: 1; min-width: 200px; }
+    .email-capture-label {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #C41E3A; margin-bottom: 0.4rem;
+    }
+    .email-capture-headline {
+      color: #FAFAFA; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem;
+    }
+    .email-capture-sub { color: #52525B; font-size: 0.82rem; }
+    .email-capture-form { display: flex; gap: 0.5rem; flex-shrink: 0; flex-wrap: wrap; }
+    .email-capture-input {
+      background: #0A0A0B; border: 1px solid #27272A; border-radius: 8px;
+      color: #FAFAFA; padding: 0.6rem 1rem; font-size: 0.875rem;
+      font-family: 'DM Sans', sans-serif; outline: none; width: 200px;
+      transition: border-color 0.2s ease;
+    }
+    .email-capture-input:focus { border-color: #C41E3A; }
+    .email-capture-btn {
+      background: #C41E3A; color: #FAFAFA;
+      border: 2px solid #C41E3A; border-radius: 8px;
+      padding: 0.6rem 1.25rem; font-weight: 600; font-size: 0.875rem;
+      font-family: 'Space Grotesk', sans-serif;
+      cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+    }
+    .email-capture-btn:hover { background: transparent; color: #C41E3A; }
+    .email-capture-success {
+      display: none; color: #10B981;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+    /* ── Empty state ── */
+    .empty-state {
+      display: none; padding: 4rem 2rem;
+      text-align: center; color: #52525B;
+    }
 
-        .nav-links a {
-            color: var(--gray-400);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    /* ── Load more ── */
+    .load-more-wrap {
+      max-width: 860px; margin: 0 auto;
+      padding: 2rem; text-align: center;
+    }
+    .load-more-btn {
+      background: transparent; color: #A1A1AA;
+      border: 1px solid #27272A; border-radius: 8px;
+      padding: 0.75rem 2rem; font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 0.875rem; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .load-more-btn:hover { border-color: #C41E3A; color: #FAFAFA; }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--white);
-        }
+    /* ── CTA section ── */
+    .cta-section {
+      padding: 6rem 2rem; text-align: center;
+      background: linear-gradient(180deg, #0A0A0B 0%, #0f0608 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 600px; height: 300px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(196,30,58,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      max-width: 560px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .cta-inner h2 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: #FAFAFA; line-height: 1.15; margin-bottom: 1.1rem;
+    }
+    .cta-inner p {
+      color: #A1A1AA; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #FAFAFA; color: #0A0A0B;
+      padding: 0.9rem 2rem; border-radius: 10px;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px); }
 
-        .nav-cta {
-            background: var(--punch-red);
-            color: var(--white);
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--punch-red);
-        }
+    /* ── Footer ── */
+    .site-footer {
+      padding: 2rem 2.5rem; border-top: 1px solid #27272A;
+      display: flex; justify-content: space-between; align-items: center;
+      background: #0A0A0B; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 0.65rem;
+    }
+    .footer-logo-text {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      color: #A1A1AA; font-size: 0.9rem;
+    }
+    .footer-logo-text span { color: #C41E3A; }
+    .footer-contact { color: #A1A1AA; font-size: 0.85rem; }
+    .footer-contact a { color: #C41E3A; transition: color 0.2s ease; }
+    .footer-contact a:hover { color: #FAFAFA; }
+    .footer-copy { color: #52525B; font-size: 0.8rem; }
 
-        .nav-cta:hover {
-            background: transparent;
-            color: var(--punch-red);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 12rem 4rem 6rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--punch-red-glow) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--punch-red);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
-            color: var(--gray-400);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Blog Grid */
-        .blog-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 4rem 8rem;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .blog-card {
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black-light) 100%);
-            border: 1px solid var(--gray-800);
-            border-radius: 20px;
-            padding: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
-            text-decoration: none;
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--punch-red);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--punch-red);
-        }
-
-        .blog-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .blog-card-image {
-            width: 100%;
-            height: 200px;
-            background: var(--gray-800);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-600);
-            font-size: 0.9rem;
-        }
-
-        .blog-card-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--gray-400);
-        }
-
-        .blog-category {
-            color: var(--punch-red);
-            font-weight: 600;
-        }
-
-        .blog-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .blog-excerpt {
-            color: var(--gray-400);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .read-more {
-            color: var(--punch-red);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            transition: gap 0.3s ease;
-        }
-
-        .blog-card:hover .read-more {
-            gap: 0.75rem;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 4rem;
-            border-top: 1px solid var(--gray-800);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .footer-logo span {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            color: var(--gray-400);
-        }
-
-        .footer-contact {
-            color: var(--gray-400);
-            font-size: 0.95rem;
-        }
-
-        .footer-contact a {
-            color: var(--punch-red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            color: var(--white);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a:not(.nav-cta) {
-                display: none;
-            }
-
-            .hero {
-                padding: 8rem 1.5rem 4rem;
-            }
-
-            .blog-container {
-                padding: 3rem 1.5rem 6rem;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
-        }
-    </style>
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .site-nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .page-header-inner { padding: 0 1.25rem; }
+      .post-row { padding: 1.1rem 1.25rem; }
+      .post-row.featured { padding: 1.5rem 1.25rem; }
+      .post-meta { display: none; }
+      .load-more-wrap { padding: 1.5rem 1.25rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      .cta-glow { width: 300px; height: 200px; }
+      .site-footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="/" class="logo">
-            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
-                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
-                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
-                <rect x="20" y="28" width="8" height="4" fill="#0A0A0B" />
-                <rect x="18" y="18" width="3" height="10" fill="#0A0A0B" />
-                <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B" />
-                <rect x="27" y="16" width="3" height="12" fill="#0A0A0B" />
-            </svg>
-            <span class="logo-text">punch<span>Dev</span></span>
-        </a>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/blog/" class="active">Blog</a>
-            <a href="/book.html" target="_blank" class="nav-cta">Book a Call</a>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="site-nav" id="siteNav">
+  <a href="https://punchdev.net" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+      <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A"/>
+      <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A"/>
+      <rect x="20" y="28" width="8" height="4" fill="#0A0A0B"/>
+      <rect x="18" y="18" width="3" height="10" fill="#0A0A0B"/>
+      <rect x="22.5" y="14" width="3" height="14" fill="#0A0A0B"/>
+      <rect x="27" y="16" width="3" height="12" fill="#0A0A0B"/>
+    </svg>
+    <span class="nav-logo-text">punch<span>Dev</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="https://punchdev.net">Home</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="section-label">Insights & Strategies</div>
-            <h1>Lead Generation Blog</h1>
-            <p class="hero-subtitle">Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation strategies to scale your pipeline.</p>
-        </div>
-    </section>
-
-    <!-- Blog Grid -->
-    <div class="blog-container">
-        <div class="blog-grid" id="blogGrid">
-
-            <!-- Blog Post 1 - April 6, 2026 -->
-            <a href="/blog/posts/state-of-b2b-saas-sales-2026.html" class="blog-card" data-publish-date="2026-04-06">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">📊</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Industry Report</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Research</span>
-                        <span>·</span>
-                        <span>13 min read</span>
-                        <span>·</span>
-                        <span>Apr 6, 2026</span>
-                    </div>
-                    <h3>State of B2B SaaS Sales 2026: Data from 500+ Companies</h3>
-                    <p class="blog-excerpt">Comprehensive industry report on B2B SaaS sales trends. Data-driven insights on AI adoption, SDR productivity, pipeline metrics, and predictions for 2027.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 2 - March 30, 2026 -->
-            <a href="/blog/posts/outreach-io-vs-ai-lead-generation.html" class="blog-card" data-publish-date="2026-03-30">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="24" font-weight="bold" font-family="'Space Grotesk', sans-serif">⚖️</text>
-                        <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="11" font-family="'DM Sans', sans-serif">Comparison</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Comparison</span>
-                        <span>·</span>
-                        <span>10 min read</span>
-                        <span>·</span>
-                        <span>Mar 30, 2026</span>
-                    </div>
-                    <h3>Outreach.io vs AI-Powered Lead Generation: Honest Comparison</h3>
-                    <p class="blog-excerpt">Compare Outreach.io to AI lead generation services. Features, pricing, pros/cons, and when to use each. Unbiased comparison to help you choose.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 3 - March 26, 2026 -->
-            <a href="/blog/posts/beyond-basic-chatbots-smb.html" class="blog-card" data-publish-date="2026-03-26">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">🤖</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Advanced AI</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Advanced</span>
-                        <span>·</span>
-                        <span>8 min read</span>
-                        <span>·</span>
-                        <span>Mar 26, 2026</span>
-                    </div>
-                    <h3>Beyond Basic Chatbots: Advanced AI for SMB Sales & Support Operations</h3>
-                    <p class="blog-excerpt">When most SMBs think of AI in customer service, they picture basic chatbots. But advanced AI can now perform sophisticated tasks that significantly boost efficiency and drive revenue.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 4 - March 23, 2026 -->
-            <a href="/blog/posts/integrate-ai-lead-generation-hubspot.html" class="blog-card" data-publish-date="2026-03-23">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="56" font-weight="bold" font-family="'Space Grotesk', sans-serif">🔗</text>
-                        <text x="50%" y="75%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">Integration</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Technical</span>
-                        <span>·</span>
-                        <span>10 min read</span>
-                        <span>·</span>
-                        <span>Mar 23, 2026</span>
-                    </div>
-                    <h3>How to Integrate AI Lead Generation with HubSpot</h3>
-                    <p class="blog-excerpt">Step-by-step guide to connect AI lead generation with HubSpot. Sync contacts, track campaigns, update deal stages, and measure ROI—all automated.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 5 - March 19, 2026 -->
-            <a href="/blog/posts/calculating-true-roi-ai-lead-gen.html" class="blog-card" data-publish-date="2026-03-19">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">📊</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">ROI Guide</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">ROI</span>
-                        <span>·</span>
-                        <span>9 min read</span>
-                        <span>·</span>
-                        <span>Mar 19, 2026</span>
-                    </div>
-                    <h3>Calculating the True ROI of AI Lead Gen for SaaS Startups (Budget $2.5k-$6k/mo)</h3>
-                    <p class="blog-excerpt">For early-stage SaaS startups looking to reach Product-Market Fit and scale rapidly, understanding the true ROI of AI-powered lead generation is critical. Here's how to calculate it accurately.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 6 - March 16, 2026 -->
-            <a href="/blog/posts/cold-email-personalization-ai-guide.html" class="blog-card" data-publish-date="2026-03-16">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="56" font-weight="bold" font-family="'Space Grotesk', sans-serif">✉️</text>
-                        <text x="50%" y="75%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Personalization</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Tactics</span>
-                        <span>·</span>
-                        <span>11 min read</span>
-                        <span>·</span>
-                        <span>Mar 16, 2026</span>
-                    </div>
-                    <h3>The Complete Guide to Cold Email Personalization with AI</h3>
-                    <p class="blog-excerpt">Master cold email personalization at scale. Learn what to personalize, where AI finds the data, and how to write emails that feel hand-crafted.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 7 - March 12, 2026 -->
-            <a href="/blog/posts/is-your-smb-ready-for-ai.html" class="blog-card" data-publish-date="2026-03-12">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">✓</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Checklist</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Planning</span>
-                        <span>·</span>
-                        <span>8 min read</span>
-                        <span>·</span>
-                        <span>Mar 12, 2026</span>
-                    </div>
-                    <h3>Is Your SMB Ready for AI? Key Indicators and Preparedness Checklist</h3>
-                    <p class="blog-excerpt">The prospect of adopting AI can seem daunting. Use this comprehensive checklist to assess if your SMB is ready for AI and learn what steps you can take to get there.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 8 - March 9, 2026 -->
-            <a href="/blog/posts/case-study-20-meetings-per-month.html" class="blog-card" data-publish-date="2026-03-09">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="38" font-weight="bold" font-family="'Space Grotesk', sans-serif">📈</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="12" font-family="'DM Sans', sans-serif">Case Study</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Case Study</span>
-                        <span>·</span>
-                        <span>9 min read</span>
-                        <span>·</span>
-                        <span>Mar 9, 2026</span>
-                    </div>
-                    <h3>Case Study: How [Company] Scaled to 20 Meetings/Month With AI</h3>
-                    <p class="blog-excerpt">Real results from a Series A SaaS company that replaced 3 SDRs with AI. See the before/after metrics, implementation process, and 80% cost reduction achieved.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 9 - March 5, 2026 -->
-            <a href="/blog/posts/scalable-saas-lead-gen-tech-stack.html" class="blog-card" data-publish-date="2026-03-05">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">⚙️</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Tech Stack</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Technical</span>
-                        <span>·</span>
-                        <span>10 min read</span>
-                        <span>·</span>
-                        <span>Mar 5, 2026</span>
-                    </div>
-                    <h3>The Scalable SaaS Lead Gen Tech Stack: Integrating AI, CRM, and Automation (with n8n Examples)</h3>
-                    <p class="blog-excerpt">Building a scalable lead generation engine for a SaaS company requires more than just a CRM. Learn how to orchestrate AI, automation, and customer data into a powerful system.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 10 - March 2, 2026 -->
-            <a href="/blog/posts/why-70-percent-sdr-time-wasted.html" class="blog-card" data-publish-date="2026-03-02">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">70%</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">Wasted</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Productivity</span>
-                        <span>·</span>
-                        <span>8 min read</span>
-                        <span>·</span>
-                        <span>Mar 2, 2026</span>
-                    </div>
-                    <h3>Why 70% of SDR Time is Wasted (And How AI Fixes It)</h3>
-                    <p class="blog-excerpt">SDRs spend most of their time on manual research, list building, and follow-ups. See the time breakdown and learn how AI eliminates these productivity killers.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 11 - February 26, 2026 -->
-            <a href="/blog/posts/cut-costs-ai-automation-smb.html" class="blog-card" data-publish-date="2026-02-26">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">💰</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Cost Savings</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Cost Savings</span>
-                        <span>·</span>
-                        <span>7 min read</span>
-                        <span>·</span>
-                        <span>Feb 26, 2026</span>
-                    </div>
-                    <h3>Cut Costs, Not Corners: How AI Automation Empowers SMBs Like Yours</h3>
-                    <p class="blog-excerpt">As an SMB leader, you're constantly balancing growth ambitions with cost management. Discover how AI automation can help you cut operational costs by 30-50% while improving service quality.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 12 - February 23, 2026 -->
-            <a href="/blog/posts/10-b2b-cold-email-templates.html" class="blog-card" data-publish-date="2026-02-23">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="48" font-weight="bold" font-family="'Space Grotesk', sans-serif">10</text>
-                        <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">Templates</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Templates</span>
-                        <span>·</span>
-                        <span>10 min read</span>
-                        <span>·</span>
-                        <span>Feb 23, 2026</span>
-                    </div>
-                    <h3>10 B2B Cold Email Templates That Actually Work</h3>
-                    <p class="blog-excerpt">Copy-paste email templates for cold outreach, follow-ups, and meeting requests. Proven templates with subject lines, personalization tips, and AI enhancement strategies.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 13 - February 19, 2026 -->
-            <a href="/blog/posts/beyond-cold-email-ai-prospecting.html" class="blog-card" data-publish-date="2026-02-19">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="48" font-weight="bold" font-family="'Space Grotesk', sans-serif">🎯</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">Prospecting</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Prospecting</span>
-                        <span>·</span>
-                        <span>7 min read</span>
-                        <span>·</span>
-                        <span>Feb 19, 2026</span>
-                    </div>
-                    <h3>Beyond Cold Email: AI-Driven Prospecting Strategies for SaaS Growth</h3>
-                    <p class="blog-excerpt">Cold email effectiveness is declining. Discover how AI can transform your SaaS prospecting with intelligent prospect identification, hyper-personalization, and automated optimization.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 14 - February 16, 2026 -->
-            <a href="/blog/posts/how-to-implement-ai-lead-generation-7-days.html" class="blog-card" data-publish-date="2026-02-16">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">7</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">Days</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Implementation</span>
-                        <span>·</span>
-                        <span>12 min read</span>
-                        <span>·</span>
-                        <span>Feb 16, 2026</span>
-                    </div>
-                    <h3>How to Implement AI Lead Generation in 7 Days</h3>
-                    <p class="blog-excerpt">Step-by-step guide to launch AI-powered outreach in one week. Day-by-day tasks from setup to first meetings booked, with templates and checklists included.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 15 - February 12, 2026 -->
-            <a href="/blog/posts/implementing-first-ai-chatbot-smb.html" class="blog-card" data-publish-date="2026-02-12">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">💬</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">Chatbot Guide</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Implementation</span>
-                        <span>·</span>
-                        <span>9 min read</span>
-                        <span>·</span>
-                        <span>Feb 12, 2026</span>
-                    </div>
-                    <h3>Implementing Your First AI Chatbot for Customer Support: A Step-by-Step SMB Guide</h3>
-                    <p class="blog-excerpt">For small and medium businesses, providing excellent customer support is crucial—but hiring 24/7 staff is prohibitively expensive. This guide shows you how to implement an AI chatbot that delivers.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 16 - February 9, 2026 -->
-            <a href="/blog/posts/ai-sdr-vs-human-sdr.html" class="blog-card" data-publish-date="2026-02-09">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="35%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="38" font-weight="bold" font-family="'Space Grotesk', sans-serif">AI</text>
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="28" font-weight="bold" font-family="'Space Grotesk', sans-serif">vs</text>
-                        <text x="68%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#A1A1AA" font-size="32" font-weight="bold" font-family="'Space Grotesk', sans-serif">👤</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Comparison</span>
-                        <span>·</span>
-                        <span>7 min read</span>
-                        <span>·</span>
-                        <span>Feb 9, 2026</span>
-                    </div>
-                    <h3>AI SDR vs Human SDR: Which is Right for Your Business?</h3>
-                    <p class="blog-excerpt">Compare AI and human SDRs across cost, speed, quality, and scale. Discover when to use AI, when to use humans, and why most companies choose a hybrid approach.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 17 - February 5, 2026 -->
-            <a href="/blog/posts/ai-validating-product-market-fit.html" class="blog-card" data-publish-date="2026-02-05">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="48%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">📈</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="10" font-family="'DM Sans', sans-serif">PMF Validation</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Product Strategy</span>
-                        <span>·</span>
-                        <span>8 min read</span>
-                        <span>·</span>
-                        <span>Feb 5, 2026</span>
-                    </div>
-                    <h3>AI's Role in Validating Product-Market Fit: Data-Driven Approaches for Early-Stage SaaS</h3>
-                    <p class="blog-excerpt">Achieving Product-Market Fit is the holy grail for early-stage SaaS startups. Learn how AI-driven approaches can accelerate your PMF validation process with data-driven insights.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 18 - February 2, 2026 -->
-            <a href="/blog/posts/true-cost-hiring-sdrs-2026.html" class="blog-card" data-publish-date="2026-02-02">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="52" font-weight="bold" font-family="'Space Grotesk', sans-serif">$</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="11" font-family="'DM Sans', sans-serif">True Cost</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">ROI & Costs</span>
-                        <span>·</span>
-                        <span>9 min read</span>
-                        <span>·</span>
-                        <span>Feb 2, 2026</span>
-                    </div>
-                    <h3>The True Cost of Hiring SDRs in 2026 (With Calculator)</h3>
-                    <p class="blog-excerpt">Calculate exactly what it costs to hire, train, and manage SDRs. Hidden expenses like ramp time, turnover, and overhead add up fast. Use our free calculator.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 19 - January 26, 2026 -->
-            <a href="/blog/posts/what-is-ai-lead-generation.html" class="blog-card" data-publish-date="2026-01-26">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="42" font-weight="bold" font-family="'Space Grotesk', sans-serif">AI</text>
-                        <text x="50%" y="72%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="12" font-family="'DM Sans', sans-serif">Complete Guide</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Lead Generation</span>
-                        <span>·</span>
-                        <span>8 min read</span>
-                        <span>·</span>
-                        <span>Jan 26, 2026</span>
-                    </div>
-                    <h3>What is AI Lead Generation? A Complete Guide for B2B SaaS</h3>
-                    <p class="blog-excerpt">Learn what AI lead generation is, how it works, and why B2B SaaS companies are using it to book more meetings without hiring SDRs. Complete guide with examples.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-            <!-- Blog Post 20 - January 22, 2026 -->
-            <a href="/blog/posts/5-signs-you-need-ai-lead-generation.html" class="blog-card" data-publish-date="2026-01-22">
-                <div class="blog-card-image">
-                    <svg viewBox="0 0 200 100" width="100%" height="100%" style="background: linear-gradient(135deg, #1A1A1D 0%, #27272A 100%);">
-                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#C41E3A" font-size="48" font-weight="bold" font-family="'Space Grotesk', sans-serif">AI</text>
-                        <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" fill="#52525B" font-size="14" font-family="'DM Sans', sans-serif">Lead Generation</text>
-                    </svg>
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Lead Generation</span>
-                        <span>·</span>
-                        <span>7 min read</span>
-                        <span>·</span>
-                        <span>Jan 22, 2026</span>
-                    </div>
-                    <h3>5 Signs Your B2B SaaS Company Needs AI-Powered Lead Generation</h3>
-                    <p class="blog-excerpt">Is your sales team drowning in manual prospecting? Discover the 5 telltale signs it's time to automate your lead generation with AI-powered outreach and book more qualified meetings.</p>
-                    <span class="read-more">Read Article →</span>
-                </div>
-            </a>
-
-        </div>
+<!-- Page header -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label animate-in" style="animation-delay:0.05s">THE BLOG</div>
+    <h1 class="animate-in" style="animation-delay:0.12s">
+      Expert Insights on AI-Powered<br>Lead Generation
+    </h1>
+    <p class="animate-in" style="animation-delay:0.18s">
+      B2B SaaS marketing, sales automation, and pipeline strategy — from the team that books 15+ qualified meetings a month for founders who have better things to do.
+    </p>
+    <div class="tag-filters animate-in" style="animation-delay:0.24s" id="tagFilters">
+      <button class="tag-pill active" data-tag="All">All</button>
+      <button class="tag-pill" data-tag="AI Outreach">AI Outreach</button>
+      <button class="tag-pill" data-tag="Lead Generation">Lead Generation</button>
+      <button class="tag-pill" data-tag="Cold Email">Cold Email</button>
+      <button class="tag-pill" data-tag="Automation">Automation</button>
+      <button class="tag-pill" data-tag="B2B Sales">B2B Sales</button>
+      <button class="tag-pill" data-tag="RevOps">RevOps</button>
     </div>
+  </div>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A" />
-                <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A" />
-                <rect x="20" y="28" width="8" height="4" fill="#52525B" />
-                <rect x="18" y="18" width="3" height="10" fill="#52525B" />
-                <rect x="22.5" y="14" width="3" height="14" fill="#52525B" />
-                <rect x="27" y="16" width="3" height="12" fill="#52525B" />
-            </svg>
-            <span>punchDev Marketing</span>
-        </div>
-        <div class="footer-contact">
-            <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
-        </div>
-    </footer>
+<!-- Post list -->
+<main id="postList">
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "punchDev Marketing Blog",
-      "description": "Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation.",
-      "url": "https://punchdev.net/blog/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "punchDev Marketing",
-        "url": "https://punchdev.net"
-      },
-      "inLanguage": "en-US"
+  <!-- Post 1 -->
+  <a href="/blog/posts/state-of-b2b-saas-sales-2026.html" class="post-row featured" data-tag="Lead Generation" data-date="2026-04-06">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1a1e2e 0%,#3a4a7a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Lead Generation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Apr 6, 2026 · 13 min read</span>
+      </div>
+      <div class="post-title">State of B2B SaaS Sales 2026: Data from 500+ Companies</div>
+      <div class="post-excerpt">Comprehensive industry report on B2B SaaS sales trends. Data-driven insights on AI adoption, SDR productivity, pipeline metrics, and predictions for 2027.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 2 -->
+  <a href="/blog/posts/outreach-io-vs-ai-lead-generation.html" class="post-row" data-tag="B2B Sales" data-date="2026-03-30">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a2a 0%,#2a5a5a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">B2B Sales</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 30, 2026 · 10 min read</span>
+      </div>
+      <div class="post-title">Outreach.io vs AI-Powered Lead Generation: Honest Comparison</div>
+      <div class="post-excerpt">Compare Outreach.io to AI lead generation services. Features, pricing, pros/cons, and when to use each. Unbiased comparison to help you choose.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 3 -->
+  <a href="/blog/posts/beyond-basic-chatbots-smb.html" class="post-row" data-tag="AI Outreach" data-date="2026-03-26">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e1a2e 0%,#4a3f7a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">AI Outreach</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 26, 2026 · 8 min read</span>
+      </div>
+      <div class="post-title">Beyond Basic Chatbots: Advanced AI for SMB Sales &amp; Support Operations</div>
+      <div class="post-excerpt">When most SMBs think of AI in customer service, they picture basic chatbots. But advanced AI can now perform sophisticated tasks that significantly boost efficiency and drive revenue.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 4 -->
+  <a href="/blog/posts/integrate-ai-lead-generation-hubspot.html" class="post-row" data-tag="Automation" data-date="2026-03-23">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#2a1a1e 0%,#6a2a3a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Automation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 23, 2026 · 10 min read</span>
+      </div>
+      <div class="post-title">How to Integrate AI Lead Generation with HubSpot</div>
+      <div class="post-excerpt">Step-by-step guide to connect AI lead generation with HubSpot. Sync contacts, track campaigns, update deal stages, and measure ROI — all automated.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Email capture (positioned dynamically by JS) -->
+  <div class="email-capture" id="emailCapture">
+    <div class="email-capture-copy">
+      <div class="email-capture-label">WEEKLY INSIGHTS</div>
+      <div class="email-capture-headline">AI outreach tactics, straight to your inbox.</div>
+      <div class="email-capture-sub">No fluff. One email a week, max.</div>
+    </div>
+    <div class="email-capture-form" id="emailForm">
+      <input type="email" class="email-capture-input" id="emailInput" placeholder="your@email.com">
+      <button class="email-capture-btn" id="emailBtn">Subscribe</button>
+    </div>
+    <div class="email-capture-success" id="emailSuccess">✓ You're in. Talk soon.</div>
+  </div>
+
+  <!-- Post 5 -->
+  <a href="/blog/posts/calculating-true-roi-ai-lead-gen.html" class="post-row" data-tag="RevOps" data-date="2026-03-19">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#2a2a1a 0%,#5a5a2a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">RevOps</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 19, 2026 · 9 min read</span>
+      </div>
+      <div class="post-title">Calculating the True ROI of AI Lead Gen for SaaS Startups (Budget $2.5k–$6k/mo)</div>
+      <div class="post-excerpt">For early-stage SaaS startups looking to reach Product-Market Fit and scale rapidly, understanding the true ROI of AI-powered lead generation is critical. Here's how to calculate it accurately.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 6 -->
+  <a href="/blog/posts/cold-email-personalization-ai-guide.html" class="post-row" data-tag="Cold Email" data-date="2026-03-16">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a1a 0%,#3a6a3a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Cold Email</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 16, 2026 · 11 min read</span>
+      </div>
+      <div class="post-title">The Complete Guide to Cold Email Personalization with AI</div>
+      <div class="post-excerpt">Master cold email personalization at scale. Learn what to personalize, where AI finds the data, and how to write emails that feel hand-crafted.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 7 -->
+  <a href="/blog/posts/is-your-smb-ready-for-ai.html" class="post-row" data-tag="AI Outreach" data-date="2026-03-12">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e1a2e 0%,#3a2f6a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">AI Outreach</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 12, 2026 · 8 min read</span>
+      </div>
+      <div class="post-title">Is Your SMB Ready for AI? Key Indicators and Preparedness Checklist</div>
+      <div class="post-excerpt">The prospect of adopting AI can seem daunting. Use this comprehensive checklist to assess if your SMB is ready for AI and learn what steps you can take to get there.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 8 -->
+  <a href="/blog/posts/case-study-20-meetings-per-month.html" class="post-row" data-tag="B2B Sales" data-date="2026-03-09">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a2a 0%,#1a4a4a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">B2B Sales</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 9, 2026 · 9 min read</span>
+      </div>
+      <div class="post-title">Case Study: How a Series A SaaS Scaled to 20 Meetings/Month With AI</div>
+      <div class="post-excerpt">Real results from a Series A SaaS company that replaced 3 SDRs with AI. See the before/after metrics, implementation process, and 80% cost reduction achieved.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 9 -->
+  <a href="/blog/posts/scalable-saas-lead-gen-tech-stack.html" class="post-row" data-tag="Automation" data-date="2026-03-05">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#2a1a1e 0%,#5a2a3a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Automation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 5, 2026 · 10 min read</span>
+      </div>
+      <div class="post-title">The Scalable SaaS Lead Gen Tech Stack: AI, CRM, and Automation with n8n</div>
+      <div class="post-excerpt">Building a scalable lead generation engine for a SaaS company requires more than just a CRM. Learn how to orchestrate AI, automation, and customer data into a powerful system.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 10 -->
+  <a href="/blog/posts/why-70-percent-sdr-time-wasted.html" class="post-row" data-tag="B2B Sales" data-date="2026-03-02">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a2a 0%,#2a5a5a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">B2B Sales</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Mar 2, 2026 · 8 min read</span>
+      </div>
+      <div class="post-title">Why 70% of SDR Time Is Wasted (And How AI Fixes It)</div>
+      <div class="post-excerpt">SDRs spend most of their time on manual research, list building, and follow-ups. See the time breakdown and learn how AI eliminates these productivity killers.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 11 -->
+  <a href="/blog/posts/cut-costs-ai-automation-smb.html" class="post-row" data-tag="RevOps" data-date="2026-02-26">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#2a2a1a 0%,#4a4a1a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">RevOps</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 26, 2026 · 7 min read</span>
+      </div>
+      <div class="post-title">Cut Costs, Not Corners: How AI Automation Empowers SMBs</div>
+      <div class="post-excerpt">Discover how AI automation can help you cut operational costs by 30–50% while improving service quality — without sacrificing growth ambitions.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 12 -->
+  <a href="/blog/posts/10-b2b-cold-email-templates.html" class="post-row" data-tag="Cold Email" data-date="2026-02-23">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a1a 0%,#2a5a2a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Cold Email</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 23, 2026 · 10 min read</span>
+      </div>
+      <div class="post-title">10 B2B Cold Email Templates That Actually Work</div>
+      <div class="post-excerpt">Copy-paste email templates for cold outreach, follow-ups, and meeting requests — with subject lines, personalization tips, and AI enhancement strategies.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 13 -->
+  <a href="/blog/posts/beyond-cold-email-ai-prospecting.html" class="post-row" data-tag="Lead Generation" data-date="2026-02-19">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1a1e2e 0%,#2a3a5a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Lead Generation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 19, 2026 · 7 min read</span>
+      </div>
+      <div class="post-title">Beyond Cold Email: AI-Driven Prospecting Strategies for SaaS Growth</div>
+      <div class="post-excerpt">Cold email effectiveness is declining. Discover how AI can transform your SaaS prospecting with intelligent prospect identification, hyper-personalization, and automated optimization.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 14 -->
+  <a href="/blog/posts/how-to-implement-ai-lead-generation-7-days.html" class="post-row" data-tag="AI Outreach" data-date="2026-02-16">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e1a2e 0%,#3a2f7a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">AI Outreach</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 16, 2026 · 12 min read</span>
+      </div>
+      <div class="post-title">How to Implement AI Lead Generation in 7 Days</div>
+      <div class="post-excerpt">Step-by-step guide to launch AI-powered outreach in one week. Day-by-day tasks from setup to first meetings booked — with templates and checklists included.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 15 -->
+  <a href="/blog/posts/implementing-first-ai-chatbot-smb.html" class="post-row" data-tag="AI Outreach" data-date="2026-02-12">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e1a2e 0%,#2a1f5a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">AI Outreach</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 12, 2026 · 9 min read</span>
+      </div>
+      <div class="post-title">Implementing Your First AI Chatbot for Customer Support: A Step-by-Step SMB Guide</div>
+      <div class="post-excerpt">For small and medium businesses, providing excellent customer support is crucial — but hiring 24/7 staff is prohibitively expensive. This guide shows you how to implement an AI chatbot that delivers.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 16 -->
+  <a href="/blog/posts/ai-sdr-vs-human-sdr.html" class="post-row" data-tag="B2B Sales" data-date="2026-02-09">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1e2a2a 0%,#1a4040 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">B2B Sales</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 9, 2026 · 7 min read</span>
+      </div>
+      <div class="post-title">AI SDR vs Human SDR: Which Is Right for Your Business?</div>
+      <div class="post-excerpt">Compare AI and human SDRs across cost, speed, quality, and scale. Discover when to use AI, when to use humans, and why most companies choose a hybrid approach.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 17 -->
+  <a href="/blog/posts/ai-validating-product-market-fit.html" class="post-row" data-tag="Lead Generation" data-date="2026-02-05">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1a1e2e 0%,#2a3a6a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Lead Generation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 5, 2026 · 8 min read</span>
+      </div>
+      <div class="post-title">AI's Role in Validating Product-Market Fit: Data-Driven Approaches for Early-Stage SaaS</div>
+      <div class="post-excerpt">Achieving Product-Market Fit is the holy grail for early-stage SaaS startups. Learn how AI-driven approaches can accelerate your PMF validation process with data-driven insights.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 18 -->
+  <a href="/blog/posts/true-cost-hiring-sdrs-2026.html" class="post-row" data-tag="RevOps" data-date="2026-02-02">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#2a2a1a 0%,#4a3a0a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">RevOps</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Feb 2, 2026 · 9 min read</span>
+      </div>
+      <div class="post-title">The True Cost of Hiring SDRs in 2026 (With Calculator)</div>
+      <div class="post-excerpt">Calculate exactly what it costs to hire, train, and manage SDRs. Hidden expenses like ramp time, turnover, and overhead add up fast. Use our free calculator.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 19 -->
+  <a href="/blog/posts/what-is-ai-lead-generation.html" class="post-row" data-tag="Lead Generation" data-date="2026-01-26">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1a1e2e 0%,#1a2a5a 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Lead Generation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Jan 26, 2026 · 8 min read</span>
+      </div>
+      <div class="post-title">What Is AI Lead Generation? A Complete Guide for B2B SaaS</div>
+      <div class="post-excerpt">Learn what AI lead generation is, how it works, and why B2B SaaS companies are using it to book more meetings without hiring SDRs. Complete guide with examples.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Post 20 -->
+  <a href="/blog/posts/5-signs-you-need-ai-lead-generation.html" class="post-row" data-tag="Lead Generation" data-date="2026-01-22">
+    <div class="post-thumb" style="background:linear-gradient(135deg,#1a1e2e 0%,#223355 100%)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="post-body">
+      <div class="post-badges">
+        <span class="post-tag-badge">Lead Generation</span>
+        <span class="post-featured-badge">Featured</span>
+        <span class="post-meta">Jan 22, 2026 · 7 min read</span>
+      </div>
+      <div class="post-title">5 Signs Your B2B SaaS Company Needs AI-Powered Lead Generation</div>
+      <div class="post-excerpt">Is your sales team drowning in manual prospecting? Discover the 5 telltale signs it's time to automate your lead generation with AI-powered outreach and book more qualified meetings.</div>
+    </div>
+    <div class="post-arrow">→</div>
+  </a>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">No posts in this category yet.</div>
+
+</main>
+
+<div class="load-more-wrap" id="loadMoreWrap">
+  <button class="load-more-btn">Load More Articles</button>
+</div>
+
+<div style="max-width:860px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,#27272A,transparent)"></div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="section-label" style="margin-bottom:1rem">READY TO SCALE?</div>
+    <h2>Stop Prospecting.<br>Start Closing.</h2>
+    <p>Book a 30-minute call. We'll build your custom AI outreach plan — no commitment required.</p>
+    <a href="/book.html" class="cta-btn">
+      Book a Free Discovery Call
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-logo">
+    <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
+      <path d="M8 24L16 16L24 24L16 32L8 24Z" fill="#C41E3A"/>
+      <path d="M40 24L32 16L24 24L32 32L40 24Z" fill="#C41E3A"/>
+    </svg>
+    <span class="footer-logo-text">punch<span>Dev</span> Marketing</span>
+  </div>
+  <div class="footer-contact">
+    <a href="mailto:georges@punchdev.net">georges@punchdev.net</a>
+  </div>
+  <div class="footer-copy">© 2026 punchDev Marketing. All rights reserved.</div>
+</footer>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "punchDev Marketing Blog",
+  "description": "Expert insights on AI-powered lead generation, B2B SaaS marketing, and sales automation.",
+  "url": "https://punchdev.net/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "punchDev Marketing",
+    "url": "https://punchdev.net"
+  },
+  "inLanguage": "en-US"
+}
+</script>
+
+<script>
+  /* ── Nav scroll effect ── */
+  (function() {
+    var nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  })();
+
+  /* ── Email capture ── */
+  (function() {
+    var btn = document.getElementById('emailBtn');
+    var input = document.getElementById('emailInput');
+    var form = document.getElementById('emailForm');
+    var success = document.getElementById('emailSuccess');
+    btn.addEventListener('click', function() {
+      if (input.value) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    });
+  })();
+
+  /* ── Tag filter + date filter + featured promotion ── */
+  (function() {
+    var activeTag = 'All';
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    var pills = document.querySelectorAll('.tag-pill');
+    var rows = Array.from(document.querySelectorAll('.post-row'));
+    var emailCapture = document.getElementById('emailCapture');
+    var emptyState = document.getElementById('emptyState');
+    var loadMoreWrap = document.getElementById('loadMoreWrap');
+
+    function applyFilters() {
+      /* determine visibility */
+      var visible = [];
+      rows.forEach(function(row) {
+        var date = new Date(row.dataset.date);
+        date.setHours(0, 0, 0, 0);
+        var tagMatch = activeTag === 'All' || row.dataset.tag === activeTag;
+        var dateMatch = date <= today;
+        if (tagMatch && dateMatch) {
+          row.style.display = '';
+          visible.push(row);
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      /* promote first visible to featured */
+      rows.forEach(function(r) { r.classList.remove('featured'); });
+      if (visible.length > 0) visible[0].classList.add('featured');
+
+      /* place email capture after 4th visible post */
+      if (visible.length >= 4) {
+        visible[3].after(emailCapture);
+        emailCapture.style.display = '';
+      } else {
+        emailCapture.style.display = 'none';
+      }
+
+      /* empty state */
+      emptyState.style.display = visible.length === 0 ? 'block' : 'none';
+      loadMoreWrap.style.display = visible.length === 0 ? 'none' : '';
     }
-    </script>
 
-    <!-- Blog Post Date Filtering Script -->
-    <script>
-        // Filter blog posts to only show those published on or before today
-        (function() {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0); // Reset to midnight for accurate date comparison
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        activeTag = pill.dataset.tag;
+        pills.forEach(function(p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        applyFilters();
+      });
+    });
 
-            const blogCards = document.querySelectorAll('.blog-card[data-publish-date]');
-
-            blogCards.forEach(card => {
-                const publishDate = new Date(card.getAttribute('data-publish-date'));
-                publishDate.setHours(0, 0, 0, 0);
-
-                if (publishDate > today) {
-                    // Future post - hide it
-                    card.style.display = 'none';
-                } else {
-                    // Published or today - show it
-                    card.style.display = 'flex';
-                }
-            });
-
-            // Check if no posts are visible
-            const visibleCards = Array.from(blogCards).filter(card => card.style.display !== 'none');
-            if (visibleCards.length === 0) {
-                // Show empty state (if you want to add one)
-                console.log('No published blog posts yet');
-            }
-        })();
-    </script>
+    /* run on load */
+    applyFilters();
+  })();
+</script>
 
 </body>
-
 </html>

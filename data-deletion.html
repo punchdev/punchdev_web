@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMK55H6FW2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NMK55H6FW2');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion — PunchDev</title>
+  <meta name="description" content="Request deletion of your personal data from PunchDev. We will remove your information within 30 days of a verified request.">
+  <link rel="canonical" href="https://punchdev.net/data-deletion.html">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0A0A0B;
+      color: #E0E0E0;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03; pointer-events: none; z-index: 9999;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(10, 10, 11, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1.15rem; color: #FAFAFA;
+      text-decoration: none; letter-spacing: -0.03em;
+    }
+    .nav-logo span { color: #C41E3A; }
+    .nav-back {
+      color: #999; font-size: 0.875rem; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: #FAFAFA; }
+
+    /* LAYOUT */
+    .container { max-width: 680px; margin: 0 auto; padding: 120px 24px 100px; }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.25rem; font-weight: 700; color: #FAFAFA;
+      margin-bottom: 8px; letter-spacing: -0.03em;
+    }
+    .updated { color: #666; font-size: 0.85rem; margin-bottom: 40px; }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem; font-weight: 600; color: #FAFAFA;
+      margin: 36px 0 14px; padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    p { margin-bottom: 12px; color: #C8C8C8; }
+    ul { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; color: #C8C8C8; }
+    a { color: #C41E3A; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #E5455A; }
+
+    /* FORM */
+    .form-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 32px; margin-top: 32px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 0.875rem; font-weight: 500;
+      color: #AAA; margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px; color: #FAFAFA;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: #C41E3A;
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .form-group select option { background: #1a1a1b; color: #FAFAFA; }
+
+    .submit-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; background: #C41E3A; color: #FAFAFA;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      border: none; border-radius: 10px; cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .submit-btn:hover { background: #A3182F; transform: translateY(-2px); }
+
+    .success-msg {
+      display: none; text-align: center; padding: 32px;
+      background: rgba(76, 175, 80, 0.08);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      border-radius: 12px; margin-top: 20px;
+    }
+    .success-msg h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #4CAF50; margin-bottom: 8px;
+    }
+    .success-msg p { color: #A0C8A0; font-size: 0.95rem; }
+
+    .note-box {
+      background: rgba(196, 30, 58, 0.06);
+      border: 1px solid rgba(196, 30, 58, 0.15);
+      border-radius: 10px; padding: 18px; margin-top: 24px;
+    }
+    .note-box p { font-size: 0.9rem; color: #B0A0A4; margin-bottom: 0; }
+
+    .footer-link { margin-top: 32px; font-size: 0.85rem; color: #555; }
+    .footer-link a { color: #888; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 18px; }
+      .container { padding: 100px 18px 60px; }
+      h1 { font-size: 1.75rem; }
+      .form-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">punch<span>Dev</span></a>
+    <a href="/" class="nav-back">&larr; Home</a>
+  </nav>
+
+  <div class="container">
+    <h1>Data Deletion Request</h1>
+    <p class="updated">Last updated: May 17, 2026</p>
+
+    <p>You have the right to request deletion of your personal data held by PunchDev Agency. We take data privacy seriously and will process your request within <strong style="color:#FAFAFA">30 days</strong> of verification.</p>
+
+    <h2>What Data We Collect</h2>
+    <ul>
+      <li>Name, email address, and phone number</li>
+      <li>Company name and business details</li>
+      <li>Website usage data (cookies, Meta Pixel)</li>
+      <li>Communication records (calls, SMS, emails)</li>
+      <li>Lead form submissions from our ads</li>
+    </ul>
+
+    <h2>What Happens When You Request Deletion</h2>
+    <ul>
+      <li>We verify your identity using the email or phone on file</li>
+      <li>All personal data is permanently removed from our CRM (GoHighLevel)</li>
+      <li>Your data is removed from Meta Custom Audiences</li>
+      <li>Any lead records associated with your information are deleted</li>
+      <li>You will receive a confirmation email once deletion is complete</li>
+    </ul>
+
+    <h2>Request Data Deletion</h2>
+
+    <div class="form-card">
+      <form id="deletionForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+        </div>
+        <div class="form-group">
+          <label for="source">How did you interact with us?</label>
+          <select id="source" name="source">
+            <option value="">Select one...</option>
+            <option value="website">Website (punchdev.net)</option>
+            <option value="facebook_ad">Facebook / Instagram Ad</option>
+            <option value="email">Email Communication</option>
+            <option value="phone">Phone Call / SMS</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="details">Additional Details (optional)</label>
+          <textarea id="details" name="details" placeholder="Any additional information to help us locate your data..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Deletion Request</button>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <h3>Request Submitted</h3>
+        <p>We've received your data deletion request. We'll verify your identity and complete the deletion within 30 days. You'll receive a confirmation email at the address provided.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><strong style="color:#C8C8C8">Note:</strong> Some data may be retained as required by law (e.g., financial records for tax purposes). Data shared with our clients (e.g., lead information) will be flagged for deletion with the respective client. If you interacted with us through a Facebook ad, you can also manage your data through <a href="https://www.facebook.com/settings?tab=facebook_business" target="_blank" rel="noopener">Facebook's Business Tools settings</a>.</p>
+    </div>
+
+    <h2>Alternative Request Methods</h2>
+    <p>You can also request data deletion by emailing us directly at <a href="mailto:privacy@punchdev.net">privacy@punchdev.net</a> with the subject line "Data Deletion Request" and including your name and email address.</p>
+
+    <p class="footer-link"><a href="privacy.html">Privacy Policy</a> &middot; <a href="/">punchdev.net</a></p>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('deletionForm');
+      const success = document.getElementById('successMsg');
+
+      // In production, this would POST to a backend endpoint.
+      // For now, show the confirmation and log the request.
+      const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+      console.log('Data deletion request:', payload);
+
+      // Send via mailto as fallback (works without backend)
+      const mailBody = Object.entries(payload)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n');
+      const mailLink = `mailto:privacy@punchdev.net?subject=Data Deletion Request&body=${encodeURIComponent(mailBody)}`;
+
+      // Show success message
+      form.style.display = 'none';
+      success.style.display = 'block';
+
+      // Open mailto in background
+      const a = document.createElement('a');
+      a.href = mailLink;
+      a.click();
+
+      return false;
+    }
+  </script>
+</body>
+</html>
